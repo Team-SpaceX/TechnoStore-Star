@@ -1,6 +1,9 @@
 # TechnoStore-Star
-Integrantes:
-Jose Daniel Soto
-Irina Ballesteros Ospino
-Angel Alcazar Marenco
-Janir Yuni Perez
+# SCRUM TEAM: 
+| Integrantes | Roles |
+|-------------|-------|
+| Jose Daniel Soto | Desarrollador |
+| Irina Ballesteros Ospino | Desarrollador |
+| Angel Alcazar Marenco | Desarrollador |
+| Janir Yuni Perez | Desarrollador |
+| Camilo Javier Soto Castro | SCRUM master |
