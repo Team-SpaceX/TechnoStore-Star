@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import '../styles/styleViewAdmin.css';
 import ChooseView from "./chooseView";
-import Logo from '../img/Logo-Tecnostore.svg';
 import datosProductos from '../productos.json';
+import Footer from "./footer";
 
 export default function ViewAdmin() {
 
@@ -15,7 +15,7 @@ export default function ViewAdmin() {
     let init = <div className="view-admin">
         <div className="w3-bar">
             <div className="w3-mobile">
-                <img id="logo" src={Logo} alt="logo de la app"></img>
+                <img id="logo" src="./img/Logo-Tecnostore.svg" alt="logo de la app"></img>
             </div>
         </div>
 
@@ -32,7 +32,6 @@ export default function ViewAdmin() {
     return (
         <div>
             {viewAdmin}
-
         </div>
 
     )

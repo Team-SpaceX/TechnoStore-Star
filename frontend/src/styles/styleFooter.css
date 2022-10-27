@@ -1,0 +1,29 @@
+/* footer */
+footer{
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--blue-dark-color);
+    font-size: 1.6rem !important;
+    color: var(--white-color);
+    text-align: center;
+  }
+  footer i{
+    font-size: 5rem;
+  }
+  .w3-half{
+    margin-top: 4rem;
+  }
+  footer i{
+    padding: 1rem 1.3rem 0rem 1.3rem;
+    border-radius: 100%;
+    transition:all 1s;
+  }
+  
+  footer i:hover{
+    color: var(--blue-dark-color);
+    background-color: var(--white-color) !important;
+    padding: 1rem 1.3rem 0rem 1.3rem;
+    border-radius: 100%;
+    transition:all 0.5s;
+  }

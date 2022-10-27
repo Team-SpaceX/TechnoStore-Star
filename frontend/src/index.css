@@ -15,6 +15,8 @@
   --white-color: #F2F2F2;
   --red-color:#F71010;
   --green-color: #25B865;
+  --font: 'Roboto', sans-serif;
+  font-size: 7.5pt;
 }
 *,
 ::before,
@@ -27,4 +29,5 @@ body {
   background-color: var(--gray-light-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font)!important;
 }
