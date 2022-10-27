@@ -67,7 +67,7 @@
           }
         ],
         "nombre": "Carolina",
-        "correo": "cricardo@gmail.com"
+        "correo": "caricardo@gmail.com"
       },
       {
         "identificacion": "8345620",
@@ -137,8 +137,8 @@
             "numero": "341-4317"
           }
         ],
-        "nombre": "Diana",
-        "correo": "dfortich@gmail.com"
+        "nombre": "Carlos",
+        "correo": "cpacheco@gmail.com"
       },
       {
         "identificacion": "1067743756",
@@ -160,8 +160,8 @@
             "numero": "362-9170"
           }
         ],
-        "nombre": "Andres",
-        "correo": "at@prueba.com"
+        "nombre": "Sandra",
+        "correo": "safortich@gmail.com"
       }
     ]
   }
