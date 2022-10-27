@@ -1,0 +1,35 @@
+
+    {
+      "fecha": "10/10/2022",
+      "idCliente": "1001",
+      "idVenta": "123",
+      "valor": 200000,
+      "confirmado": true,
+      "detalleCompra": [
+        {
+          "idProducto": "101",
+          "cantidad": 2
+        },
+        {
+          "idProducto": "108",
+          "cantidad": 1
+        },
+        {
+          "idProducto": "103",
+          "cantidad": 5
+        }
+      ]
+    },
+    {
+      "fecha": "20/10/2022",
+      "idCliente": "1002",
+      "idVenta": "1234",
+      "valor": 500000,
+      "confirmado": true,
+      "detalleCompra": [
+        {
+          "idProducto": "105",
+          "cantidad": 3
+        }
+      ]
+    }

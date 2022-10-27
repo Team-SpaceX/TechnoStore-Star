@@ -1,0 +1,83 @@
+[
+
+  {
+    "id": "100",
+    "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_782146-MCO49759704863_042022-O.webp",
+    "nombre": "Tarjeta De Video G210 1gb Ddr3 Hdmi Pci E",
+    "descripcion": "Placa de Video EVGA GeForce 210 1 GB DDR3, ideal para obtener mejor performance en equipos económicos . Cuenta con 1Gb DDR3 y el chip NVIDIA GeForce 210. Incluye salida HDMI, VGA y DVI-I. Soporta DirectX 10.1, OpenGL 3.2, PhysX y CUDA.",
+    "características": "<ul><li>Modelo: NVIDIA® GeForce 210</li><li>GPU: NVIDIA GF 210</li><li>Velocidad de Clock: 520 MHz</li><li>Velocidad de Shader: 1238 Mhz</li><li>Procesadores de Flujo: 16 CUDA Cores</li><li>Memoria: 1Gb DDR3 64 bit</li></ul>",
+    "categoria": "Tarjetas de Video",
+    "stock": 10,
+    "precioUnidad": "151.905"
+  },
+  {
+    "id": "102",
+    "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_921096-MCO51079887901_082022-O.webp",
+    "nombre": "Tarjeta De Vídeo Zotac Amp Holo Geforce Rtx 3070 Ti 8gb",
+    "descripcion": "Disfrute del ultra rendimiento en los títulos de juegos más recientes y amplifique su experiencia de juego con ZOTAC GAMING GeForce RTX 3070 Ti AMP Holo. El equilibrio afinado entre la refrigeración, la acústica y la estética de la tarjeta gráfica ZOTAC GAMING da lugar a juegos fluidos de alta fidelidad.",
+    "características": "<ul><li>Núcleos de trazado de rayos de 2.ª generación</li><li>Núcleos de tensor de 3.ª generación</li><li>Diseño HoloBlack</li><li>Iluminación SPECTRA 2.0 RGB</li><li>Enfriamiento avanzado IceStorm 2.0</li><li>Control de ventilador activo con parada de ventilador FREEZE</li><li>Placa trasera LED RGB de metal</li><li>Utilidad FireStorm</li><li>VR Ready</li></ul>",
+    "categoria": "Tarjetas de Video",
+    "stock": 5,
+    "precioUnidad": "3.499.000"
+  },
+  {
+    "id": "103",
+    "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_753002-MCO50743160794_072022-O.webp",
+    "nombre": "Board Gigabyte B450 M Ds3h Para Ryzen",
+    "descripcion": "Las motherboards GIGABYTE serie 400 maximizan el potencial de su PC con la tecnología AMD StoreMI.",
+    "características": "<ul><li>Plataforma: AMD</li><li>Capacidad máxima soportada de la memoria RAM: 128 GB</li><li>Ranuras de expansión: PCI,PCI Express</li><li>Socket: Socket AM4</li><li>Tipo de memoria RAM: DDR4</li></ul>",
+    "categoria": "Boards",
+    "stock": 100,
+    "precioUnidad": "446.000"
+  },
+  {
+    "id": "104",
+    "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_868817-MCO43839764745_102020-O.webp",
+    "nombre": "Board Gigabyte B450 M Ds3h Para Ryzen",
+    "descripcion": "Placa base AMD B450 AORUS con PWM digital híbrido, M.2 con protección térmica, LAN para juegos GIGABYTE con protección ESD de 25KV, Diseño anti-azufre, CEC 2019 listo, RGB FUSION 2.0",
+    "características": "<ul><li>Plataforma: AMD</li><li>Capacidad máxima soportada de la memoria RAM: 64 GB</li><li>Chipsets: AMD B450</li><li>Socket: Socket AM4</li><li>Ranuras de expansión: 1 x PCI Express x16 (x16 mode),1 x PCI Express x16 (x4 mode),1 x PCI Express x1</li><li>Tipo de memoria RAM: DDR4</li></ul>",
+    "categoria": "Boards",
+    "stock": 100,
+    "precioUnidad": "446.000"
+  },
+  {
+    "id": "105",
+    "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_782146-MCO49759704863_042022-O.webp",
+    "nombre": "Tarjeta De Video G210 1gb Ddr3 Hdmi Pci E",
+    "descripcion": "Placa de Video EVGA GeForce 210 1 GB DDR3, ideal para obtener mejor performance en equipos económicos . Cuenta con 1Gb DDR3 y el chip NVIDIA GeForce 210. Incluye salida HDMI, VGA y DVI-I. Soporta DirectX 10.1, OpenGL 3.2, PhysX y CUDA.",
+    "características": "<ul><li>Modelo: NVIDIA® GeForce 210</li><li>GPU: NVIDIA GF 210</li><li>Velocidad de Clock: 520 MHz</li><li>Velocidad de Shader: 1238 Mhz</li><li>Procesadores de Flujo: 16 CUDA Cores</li><li>Memoria: 1Gb DDR3 64 bit</li></ul>",
+    "categoria": "Tarjetas de Video",
+    "stock": 10,
+    "precioUnidad": "151.905"
+  },
+  {
+    "id": "106",
+    "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_921096-MCO51079887901_082022-O.webp",
+    "nombre": "Tarjeta De Vídeo Zotac Amp Holo Geforce Rtx 3070 Ti 8gb",
+    "descripcion": "Disfrute del ultra rendimiento en los títulos de juegos más recientes y amplifique su experiencia de juego con ZOTAC GAMING GeForce RTX 3070 Ti AMP Holo. El equilibrio afinado entre la refrigeración, la acústica y la estética de la tarjeta gráfica ZOTAC GAMING da lugar a juegos fluidos de alta fidelidad.",
+    "características": "<ul><li>Núcleos de trazado de rayos de 2.ª generación</li><li>Núcleos de tensor de 3.ª generación</li><li>Diseño HoloBlack</li><li>Iluminación SPECTRA 2.0 RGB</li><li>Enfriamiento avanzado IceStorm 2.0</li><li>Control de ventilador activo con parada de ventilador FREEZE</li><li>Placa trasera LED RGB de metal</li><li>Utilidad FireStorm</li><li>VR Ready</li></ul>",
+    "categoria": "Tarjetas de Video",
+    "stock": 5,
+    "precioUnidad": "3.499.000"
+  },
+  {
+    "id": "107",
+    "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_753002-MCO50743160794_072022-O.webp",
+    "nombre": "Board Gigabyte B450 M Ds3h Para Ryzen",
+    "descripcion": "Las motherboards GIGABYTE serie 400 maximizan el potencial de su PC con la tecnología AMD StoreMI.",
+    "características": "<ul><li>Plataforma: AMD</li><li>Capacidad máxima soportada de la memoria RAM: 128 GB</li><li>Ranuras de expansión: PCI,PCI Express</li><li>Socket: Socket AM4</li><li>Tipo de memoria RAM: DDR4</li></ul>",
+    "categoria": "Boards",
+    "stock": 100,
+    "precioUnidad": "446.000"
+  },
+  {
+    "id": "108",
+    "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_868817-MCO43839764745_102020-O.webp",
+    "nombre": "Board Gigabyte B450 M Ds3h Para Ryzen",
+    "descripcion": "Placa base AMD B450 AORUS con PWM digital híbrido, M.2 con protección térmica, LAN para juegos GIGABYTE con protección ESD de 25KV, Diseño anti-azufre, CEC 2019 listo, RGB FUSION 2.0",
+    "características": "<ul><li>Plataforma: AMD</li><li>Capacidad máxima soportada de la memoria RAM: 64 GB</li><li>Chipsets: AMD B450</li><li>Socket: Socket AM4</li><li>Ranuras de expansión: 1 x PCI Express x16 (x16 mode),1 x PCI Express x16 (x4 mode),1 x PCI Express x1</li><li>Tipo de memoria RAM: DDR4</li></ul>",
+    "categoria": "Boards",
+    "stock": 100,
+    "precioUnidad": "446.000"
+  }
+]
