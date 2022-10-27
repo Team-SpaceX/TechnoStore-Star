@@ -1,0 +1,174 @@
+/* nav-bar */
+.view-admin .w3-bar{
+    color: var(--white-color);
+    background-color: var(--blue-dark-color);
+    box-shadow: 0 1px 5px var(--gray-color);
+  }
+
+  .view-admin .w3-bar .w3-mobile img{
+    border:none;
+    display:inline-block;
+    padding:1rem 0.5rem;
+    vertical-align:middle;
+    overflow:hidden;
+    text-decoration:none;
+    color:inherit;
+    background-color:inherit;
+    cursor:pointer;
+    white-space:nowrap;
+    width: 14rem;
+  }
+  
+  /* sidebar */
+
+
+  .my-admin-sidebar-content{
+    background-color: #FFFF;
+    width: 80%;
+    margin-left: 10%;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 12%);
+    border-radius: 5px;
+  }
+  
+  .my-admin-sidebar-content .img-user{
+    background-color: transparent;
+    color: var(--blue-dark-color);
+    border: 4.5px solid var(--blue-dark-color);
+    font-size: 4rem;
+    height: 80px;
+    width: 80px;
+    border-radius:50%;
+    text-align: center;
+    cursor:pointer;
+    white-space:nowrap;
+    box-sizing: border-box;
+    margin: 0% 35%;
+  
+  }
+  
+  .my-admin-sidebar-content ul{
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+    padding: 0;
+    text-align: justify;
+  }
+  
+  .my-admin-sidebar-content ul li{
+  padding: 1rem 2rem;
+  cursor:pointer;
+  }
+  
+  .my-admin-sidebar-content ul li:hover{
+      font-family: 'Roboto black', sans-serif;
+    color: var(--white-color);
+    background-color: var(--blue-dark-color);
+      transition:all 0.5s;
+  }
+  #btn-add{
+    color: var(--white-color);
+    background-color: var(--green-color);
+    cursor:pointer;
+    margin-bottom: 2rem;
+    padding: 5px;
+    border: 0;
+    border-radius: 5px;
+      box-shadow: 0 1px 5px 0 rgb(0 0 0 / 12%);
+  
+  }
+  #btn-add:hover{
+      box-shadow: 0 1px 5px 0 rgb(0 0 0 / 50%);
+    transition:all 0.5s;
+  
+  }
+  #btn-add:active{
+      box-shadow: 0 1px 5px 0 rgb(0 0 0 / 50%);
+  
+  }
+
+  /* admin product card*/
+  .w3-container .my-admin-content{
+    padding-left: 6%;
+  }
+  .w3-container .my-admin-content{
+    text-align: left;
+  }
+.my-admin-card{
+    width: 200px !important;
+    height: 350px !important;
+    margin: 1%;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 12%);
+    background-color: #FFFF;
+    border-radius:5px;
+  }
+  .my-admin-card:hover{
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 50%);
+  }
+  .my-admin-card-img img{
+    padding: 5px;
+  width: 100%;
+  height: 150px;
+  }
+  .my-admin-card-b{
+    padding:0 1rem;
+  }
+  .my-admin-card-b h3{
+    font-family: 'Roboto Black', sans-serif;
+    font-size: 1rem;
+    text-align: justify;
+  }
+  .my-admin-card-b h4{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    text-align: justify;
+  }
+  .my-admin-card-b h5{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    text-align: justify;
+  }
+  .my-admin-card-b h4 span{
+    font-family: 'Roboto Black', sans-serif;
+    font-size: 1rem;
+    text-align: justify;
+  }
+  
+  .my-admin-card-a button{
+    justify-content: center;
+    text-align: center;
+    line-height: 0;
+    cursor:pointer;
+    white-space:nowrap;
+    font-size: 1rem;
+    border-radius: 50%;
+    height:2rem;
+    width: 2rem;
+    box-sizing: border-box;
+    margin: 5% 15% 8% 15%;
+  }
+  
+  #btn-view{
+    color: var(--blue-light-color);
+    background-color: transparent;
+    border: 2.5px solid var(--blue-light-color);
+  }
+  
+  #btn-view:hover{
+    background-color:var(--blue-light-color);
+    color: var(--white-color) !important;
+    transition:all 0.5s;
+  }
+  
+  #btn-delete{
+    color: var(--red-color);
+    background-color: transparent;
+    border: 2.5px solid var(--red-color);
+  }
+  
+  #btn-delete:hover{
+    background-color:var(--red-color);
+    color: var(--white-color) !important;
+    transition:all 0.5s;
+  }
+  
