@@ -2,9 +2,9 @@
     "ventas": [
       {
         "fecha": "12/10/2022",
-        "idCliente": "57890432",
+        "idCliente": "1047890432",
         "idVenta": "201",
-        "valor": 695.000,
+        "valor": "695.000",
         "confirmado": true,
         "detalleCompra": [
           {
@@ -14,31 +14,53 @@
         ]
       },
       {
-        "fecha": "28/09/2022",
-        "idCliente": "22222",
-        "idVenta": "234",
-        "valor": 50,
+        "fecha": "13/10/2022",
+        "idCliente": "8845278",
+        "idVenta": "202",
+        "valor": "4.926.900",
         "confirmado": false,
         "detalleCompra": [
           {
-            "idProducto": "GGOEAFKA087499",
+            "idProducto": "B345267189",
+            "cantidad": 1
+          }
+        ]
+      },
+      {
+        "fecha": "14/10/2022",
+        "idCliente": "1023478296",
+        "idVenta": "203",
+        "valor": "229.900",
+        "confirmado": true,
+        "detalleCompra": [
+          {
+            "idProducto": "D25641589",
+            "cantidad": 6
+          }         
+        ]
+      },
+      {
+        "fecha": "14/10/2022",
+        "idCliente": "8345620",
+        "idVenta": "204",
+        "valor": "1.700.900",
+        "confirmado": true,
+        "detalleCompra": [
+          {
+            "idProducto": "J47586923",
             "cantidad": 2
           }
         ]
       },
       {
-        "fecha": "29/09/2022",
-        "idCliente": "1231",
-        "idVenta": "543",
-        "valor": 10,
+        "fecha": "15/10/2022",
+        "idCliente": "1047325867",
+        "idVenta": "205",
+        "valor": "5.000.000",
         "confirmado": true,
         "detalleCompra": [
           {
-            "idProducto": "GGOEAFKA087499",
-            "cantidad": 2
-          },
-          {
-            "idProducto": "GGOEAFKA087599",
+            "idProducto": "M73518017",
             "cantidad": 1
           }
         ]
