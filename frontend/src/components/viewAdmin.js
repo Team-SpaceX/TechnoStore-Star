@@ -1,60 +1,57 @@
 import React, { useState } from "react";
 import '../styles/styleViewAdmin.css';
 import ChooseView from "./chooseView";
-import datosProductos from '../productos.json';
 import Footer from "./footer";
+import dbProducts from '../productos.json';
+//nav-bar
+import NavAdmin from "./navAdmin";
 
 export default function ViewAdmin() {
-
     const goBack = () => {
-        setViweAdmin(viewAdmin = <ChooseView />)
+        setViewAdmin(viewAdmin = <ChooseView />)
     }
 
-
-
+    //initial status of the view to manage products
     let init = <div className="view-admin">
-        <div className="w3-bar">
-            <div className="w3-mobile">
-                <img id="logo" src="./img/Logo-Tecnostore.svg" alt="logo de la app"></img>
-            </div>
-        </div>
+                    <NavAdmin />
+                    <div className="w3-container">
+                        <PanelAdmin />
 
-        <div className="w3-container">
-            <PanelAdmin />
+                        <button className="w3-display-bottomright" onClick={goBack}>Volver</button>
+                    </div>
+                    <Footer />
+                </div>;
 
-            <button className="w3-display-bottomright" onClick={goBack}>Volver</button>
-        </div>
-    </div>;
-
-    //let [chooseView, setChooseView] = useState('')
-    let [viewAdmin, setViweAdmin] = useState(init);
-
+    let [viewAdmin, setViewAdmin] = useState(init);
     return (
         <div>
             {viewAdmin}
         </div>
-
     )
 }
 
 function PanelAdmin() {
-    function visualizacion() {
-
-        setvisualizar(visualizar = datosProductos)
+    //changes  the view status to the main panel
+    function viewMain(){
+        document.getElementById('sectionTitle').innerText = 'Panel Principal';
+        setViewProducts(viewProducts = [])
+    }
+    //list of the products on screen
+    function listProducts() {
+        document.getElementById('sectionTitle').innerText = 'Mis Productos';
+        setViewProducts(viewProducts = dbProducts);
 
     }
-
-    let [visualizar, setvisualizar] = useState([])
+    let [viewProducts, setViewProducts] = useState([]);
     return (
-
         <div className="w3-row">
             <div className='w3-col m3 my-admin-sidebar'>
                 <div className="my-admin-sidebar-content">
-                    <div className="img-user">
+                    <div className="img-user" onClick={viewMain}>
                         <i className="fi fi-rr-user"></i>
                     </div>
                     <ul>
-                        <li onClick={visualizacion}>Lista de productos</li>
+                        <li onClick={listProducts}>Lista de productos</li>
                         <li>Lista de ventas</li>
                     </ul>
                     <hr></hr>
@@ -63,19 +60,19 @@ function PanelAdmin() {
                 </div>
             </div>
             <div className="w3-col m9 my-admin-content">
-                    <h1>Lista de productos</h1>
+            <h1 id="sectionTitle">Panel principal</h1>
                     <hr></hr>
-                    {visualizar.map((elem, idx) => {
+                    {viewProducts.map((elem, idx) => {
                         return (
                             <div className="w3-col my-admin-card" key={elem.id}>
 
                                 <div className="my-admin-card-img">
-                                    <img src={elem.urlImagen}></img>
+                                    <img src={elem.urlImagen} alt='Imagen del producto'></img>
                                 </div>
                                 <div className='my-admin-card-b'>
-                                    <h3>{elem.nombre}</h3>
-                                    <h4>Precio: <span>$ {elem.precioUnidad}</span></h4>
-                                    <h5>{elem.stock} en Stock!</h5>
+                                    <h3>{elem.name}</h3>
+                                    <h4>Precio: <span>$ {elem.price}</span></h4>
+                                    <h5>{elem.CantStock} en Stock!</h5>
                                 </div>
                                 <div className='my-admin-card-a'>
                                     <button id="btn-view"><i
@@ -88,7 +85,5 @@ function PanelAdmin() {
                 </div>
 
             </div>
-           
-
             )
 }

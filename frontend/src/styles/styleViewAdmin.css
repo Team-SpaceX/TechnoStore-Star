@@ -7,8 +7,8 @@
 
   .view-admin .w3-bar .w3-mobile img{
     border:none;
+    margin: 0.5rem;
     display:inline-block;
-    padding:1rem 0.5rem;
     vertical-align:middle;
     overflow:hidden;
     text-decoration:none;
@@ -16,18 +16,16 @@
     background-color:inherit;
     cursor:pointer;
     white-space:nowrap;
-    width: 14rem;
+    width: 20rem;
   }
   
   /* sidebar */
-
-
   .my-admin-sidebar-content{
     background-color: #FFFF;
     width: 80%;
     margin-left: 10%;
     padding-top: 2rem;
-    margin-top: 2rem;
+    margin-top: 10rem;
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 12%);
     border-radius: 5px;
   }
@@ -36,7 +34,7 @@
     background-color: transparent;
     color: var(--blue-dark-color);
     border: 4.5px solid var(--blue-dark-color);
-    font-size: 4rem;
+    font-size: 6rem;
     height: 80px;
     width: 80px;
     border-radius:50%;
@@ -56,6 +54,7 @@
   }
   
   .my-admin-sidebar-content ul li{
+    font-size: 1.8rem;
   padding: 1rem 2rem;
   cursor:pointer;
   }
@@ -69,12 +68,13 @@
   #btn-add{
     color: var(--white-color);
     background-color: var(--green-color);
+    font-size: 1.8rem;
     cursor:pointer;
     margin-bottom: 2rem;
     padding: 5px;
     border: 0;
     border-radius: 5px;
-      box-shadow: 0 1px 5px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 1px 5px 0 rgb(0 0 0 / 12%);
   
   }
   #btn-add:hover{
@@ -95,8 +95,9 @@
     text-align: left;
   }
 .my-admin-card{
+  position: relative;
     width: 200px !important;
-    height: 350px !important;
+    height: 390px !important;
     margin: 1%;
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 12%);
     background-color: #FFFF;
@@ -105,8 +106,11 @@
   .my-admin-card:hover{
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 50%);
   }
-  .my-admin-card-img img{
-    padding: 5px;
+  .my-admin-card-img{
+    border-bottom: 1px solid rgb(0 0 0 / 30%);
+  }
+  .my-admin-card-img img{  
+  padding: 5px;
   width: 100%;
   height: 150px;
   }
@@ -115,35 +119,40 @@
   }
   .my-admin-card-b h3{
     font-family: 'Roboto Black', sans-serif;
-    font-size: 1rem;
+    font-size: 1.6rem;
     text-align: justify;
   }
   .my-admin-card-b h4{
     font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-align: justify;
   }
   .my-admin-card-b h5{
     font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-align: justify;
   }
   .my-admin-card-b h4 span{
     font-family: 'Roboto Black', sans-serif;
-    font-size: 1rem;
+    font-size: 1.6rem;
     text-align: justify;
   }
-  
+  .my-admin-card-a{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
   .my-admin-card-a button{
     justify-content: center;
     text-align: center;
     line-height: 0;
     cursor:pointer;
     white-space:nowrap;
-    font-size: 1rem;
-    border-radius: 50%;
-    height:2rem;
-    width: 2rem;
+    font-size: 2rem;
+    border-radius: 10px;
+    height:4rem;
+    width: 4rem;
     box-sizing: border-box;
     margin: 5% 15% 8% 15%;
   }
