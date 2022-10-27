@@ -180,4 +180,71 @@
     color: var(--white-color) !important;
     transition:all 0.5s;
   }
-  
+
+  /* MODALS */
+  /* modal-delete */
+  #delProduct div{
+    color: var(--white-color); 
+     background-color: var(--red-color);
+    padding-top: 4rem;
+     width: 40%;
+   }
+   #delProduct div #modalMessage{
+    padding-top: 1rem;
+     font-family: 'Roboto';
+     font-size: 2rem;
+     width: 100%;
+     background-color: var(--red-color);
+   }
+   
+   #delProduct div button{
+     border: none;
+      color: var(--white-color);
+     background-color: transparent;
+     padding: 5px;
+     font-family: 'Roboto';
+     font: 1.4rem;
+     margin:0 15%;
+   }
+   #delProduct div button:hover{
+    cursor: pointer;
+    transition: all 0.2s;
+   text-shadow: 1px 1px black;
+   }
+
+   /* modal new product*/
+   #newProduct div{
+    text-align: left !important;
+      color: var(--blue-dark-color); 
+       background-color: var(--white-color);
+      padding-top: 4rem;
+       width: 40%;
+     }
+     #newProduct header{
+      text-align: center;
+    }
+  #newProduct header h2{
+    margin: 0;
+    font-size: 2rem;
+  }
+     #newProduct .w3-container{
+      padding-top: 1rem;
+       font-family: 'Roboto';
+       font-size: 1.4rem;
+       width: 100%
+     }
+     
+     #newProduct div button{
+       border: none;
+        color: var(--white-color);
+       background-color: transparent;
+       padding: 5px;
+       font-family: 'Roboto';
+       font: 1.4rem;
+       margin:0 15%;
+     }
+     #newProduct div button:hover{
+      cursor: pointer;
+      transition: all 0.2s;
+     text-shadow: 1px 1px black;
+     }
