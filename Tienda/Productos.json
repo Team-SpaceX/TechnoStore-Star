@@ -1,0 +1,204 @@
+{
+    "productos": [
+      {
+        "id": "A98765432",
+        "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_750949-MLA49850742482_052022-O.webp",
+        "nombre": "Tarjeta de video AMD 4GB",
+        "descripcion": "AMD XFX QICK 210 Radeon RX 6500 Series RX 6500 XT RX-65XT4DBDQ Black Edition",
+        "características": "<p> Frecuencia boost del núcleo de 2825MHz </p>\n<p>base de 2420MHz</p>",
+        "precio": "1.049.900",
+        "category": "Tecnologia",
+        "Cant Stock": 13
+      },
+      {
+        "id": "B345267189",
+        "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_915088-MLA45732621252_042021-O.webp",
+        "name": "Tarjeta de video Nvidia MSI",
+        "description": "Gaming X GeForce GTX 16 Series GTX 1650 SUPER GEFORCE GTX 1650 SUPER GAMING X 4GB.",
+        "features": "<p> Graphic memory GDDR6</p>\n<p>Interface PCI-Express 3.0</p>",
+        "price": "4.926.900",
+        "category": "Tecnologia",
+        "Cant Stock": 14
+      },
+      {
+        "id": "C53421789",
+        "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_782400-MLA51916071301_102022-O.webp",
+        "name": "Tarjeta de video Nvidia Evga SC",
+        "description": "Gaaming GeForce RTX 20 Series RTX 2060 06G-P4-2062-KR 6GB.",
+        "features": "<p> Frecuencia boost del núcleo de 1710MHz</p>\n<p>Resolución máxima: 7680x4320</p>",
+        "price": "2.245.975",
+        "category": "Tecnologia",
+        "Cant Stock": 9
+      },
+      {
+        "id": "D93746239",
+        "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_937470-MLA48112273362_112021-O.webp",
+        "name": "Tarjeta de video AMD Asus Dual Radeon",
+        "description": "6600 Series RX 6600 XT DUAL-RX6600XT-O8G OC Edition 8GB.",
+        "features": "<p> Compatible con directX y openGL</p>\n<p>Admite hasta 4 monitores</p>",
+        "price": "2.227.708",
+        "category": "Tecnologia",
+        "Cant Stock": 16
+      },
+      {
+        "id": "F90728029",
+        "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_2X_965374-MLA48587787372_122021-F.webp",
+        "name": "Tarjeta de video AMD MSI Radeon",
+        "description": "6600 Series RX 6600 RADEON RX 6600 MECH 2X 8G 8GB.",
+        "features": "<p> Frecuencia boost del núcleo de 2491MHz</p>\n<p>Compatible con directX y openGL</p>",
+        "price": "2.850.000",
+        "category": "Tecnologia",
+        "Cant Stock": 19
+      },
+      {
+        "id": "D25641589",
+        "urlImagen": "https://i.linio.com/p/1c188a9c177ead5b18c410a5e81aab71-product.webp",
+        "name": "Memoria Ram DRR4 XPG",
+        "description": "Gammix D10 8GB 3200MHz.",
+        "features": "<p> overclocking</p>\n<p>Compatibles con la nueva implementación Intel X299</p>",
+        "price": "229.900",
+        "category": "Tecnologia",
+        "Cant Stock": 10
+      },
+      {
+        "id": "G46378211",
+        "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_2X_797555-MLA48282016555_112021-F.webp",
+        "name": "Memoria RAM Vengeance LPX",
+        "description": "Optimiza el rendimiento de tu máquina con la tecnología DDR4 DRAM.",
+        "features": "<p> Gamer color negro</p>\n<p>16GB</p>",
+        "price": "294.800",
+        "category": "Tecnologia",
+        "Cant Stock": 18
+      },
+      {
+        "id": "H364701847",
+        "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_625944-MLA51556753159_092022-O.webp",
+        "name": "Tarjeta de video AMD XFX Radeon",
+        "description": "RX 6600 RX-66XL8LFDQ 8GB.",
+        "features": "<p> Interfaz PCI-Express 4.0.</p>\n<p>Compatible con directX y openGL</p>",
+        "price": "1.647.264",
+        "category": "Tecnologia",
+        "Cant Stock": 21 
+      },
+      {
+        "id": "J47586923",
+        "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_978108-MLA50967894719_082022-O.webp",
+        "name": "Tarjeta de video AMD Biostar Radeon",
+        "description": "Radeon RX 6600 Series Radeon RX6600 VA6606RM81 8GB.",
+        "features": "<p> Interfaz PCI-Express 4.0.</p>\n<p>DisplayPort, HDMI.</p>",
+        "price": "1.700.900",
+        "category": "Tecnologia",
+        "Cant Stock": 13
+      },
+      {
+        "id": "L47164938",
+        "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_2X_623958-MLA48655683281_122021-F.webp",
+        "name": "Tarjeta de video AMD",
+        "description": "Gigabyte Eagle Radeon 6600 Series RX 6600 GV-R66EAGLE-8GD 8GB.",
+        "features": "<p> Interfaz PCI-Express 4.0.</p>\n<p>Frecuencia boost del núcleo de 2491MHz.</p>",
+        "price": "1.850.000",
+        "category": "Tecnologia",
+        "Cant Stock": 14
+      },
+      {
+        "id": "M73518017",
+        "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_916210-MLA45376232516_032021-O.webp",
+        "name": "Procesador gamer AMD Ryzen 5",
+        "description": "3600X 100-100000022BOX de 6 núcleos y 4.4GHz de frecuencia.",
+        "features": "<p> Potencia de 95 W.</p>\n<p>Soporta memoria RAM DDR4.</p>",
+        "price": "5.000.000",
+        "category": "Tecnologia",
+        "Cant Stock": 11
+      }, 
+      {
+        "id": "N10367298",
+        "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_978283-MLA47177086384_082021-O.webp",
+        "name": "Procesador gamer Intel Core i5",
+        "description": "11400 BX8070811400 de 6 núcleos y 4.4GHz de frecuencia con gráfica integrada.",
+        "features": "<p> Potencia de 65 W.</p>\n<p>Soporta memoria RAM DDR4.</p>",
+        "price": "945.000",
+        "category": "Tecnologia",
+        "Cant Stock": 13
+      }, 
+      {
+        "id": "P01384697",
+        "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_666270-MLA51758534525_092022-O.webp",
+        "name": "Procesador Intel Core i5",
+        "description": "11400 BX8070811400 de 6 núcleos y 4.4GHz de frecuencia con gráfica integrada.",
+        "features": "<p> Potencia de 117 W.</p>\n<p>Soporta memoria RAM DDR5, DDR4.</p>",
+        "price": "1.025.000",
+        "category": "Tecnologia",
+        "Cant Stock": 6
+      }, 
+      {
+        "id": "W83415601",
+        "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_928642-MLA47847420037_102021-O.webp",
+        "name": "Procesador gamer AMD Ryzen 5",
+        "description": "5600G 100-100000252BOX de 6 núcleos y 4.4GHz de frecuencia con gráfica integrada.",
+        "features": "<p> Potencia de 65 W.</p>\n<p>Soporta memoria RAM DDR4.</p>",
+        "price": "778.800",
+        "category": "Tecnologia",
+        "Cant Stock": 9
+      }, 
+      {
+        "id": "T01745924",
+        "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_922880-MLA45376527585_032021-O.webp",
+        "name": "Procesador gamer AMD Ryzen 7",
+        "description": "3700X 100-100000071BOX de 8 núcleos y 4.4GHz de frecuencia.",
+        "features": "<p> Potencia de 65 W.</p>\n<p>Soporta memoria RAM DDR4.</p>",
+        "price": "1.332.850",
+        "category": "Tecnologia",
+        "Cant Stock": 4
+      }, 
+      {
+        "id": "V32710914",
+        "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_915647-MCO45698549505_042021-O.webp",
+        "name": "El Gato Hd60 S+ Sistema De Captura De Juego Usb 3.0",
+        "description": "Con el HD60 S+, disfruta de tus juego triple A en toda su espectacularidad gráfica y aumenta fácilmente tu calidad de producción.",
+        "features": "<p> HD60 S+.</p>\n<p>funciona con OBS Studio, Streamlabs OBS, XSplit.</p>",
+        "price": "883.670",
+        "category": "Tecnologia",
+        "Cant Stock": 6
+      }, 
+      {
+        "id": "W76218114",
+        "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_675607-MCO44529490894_012021-O.webp",
+        "name": "Chasis Corsair Icue 4000x Rgb Black",
+        "description": "El CORSAIR iCUE 4000X RGB es un gabinete ATX semitorre de vidrio templado.",
+        "features": "<p> SKU CC-9011204-WW.</p>\n<p>iCUE 4000X RGB Tempered Glass Mid-Tower ATX Case — Black.</p>",
+        "price": "695.000",
+        "category": "Computación",
+        "Cant Stock": 3
+      }, 
+      {
+        "id": "O63827184",
+        "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_918944-MCO51544920085_092022-O.webp",
+        "name": "Refrigeracion Liquida Corsair Icue H170i Elite Lcd",
+        "description": "Ventiladores de próxima generación para potenciar la refrigeración de CPU.",
+        "features": "<p> SWater cooling.</p>\n<p>Refrigeración de alto rendimiento.</p>",
+        "price": "2.179.000",
+        "category": "Computación",
+        "Cant Stock": 1
+      }, 
+      {
+        "id": "T17352670",
+        "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_615087-MCO25719708548_072017-O.webp",
+        "name": "Combo Board Asrock Fm2 Procesador A6 7400k Radeon Ram 8gb Pc",
+        "description": "Combo Board ASRock FM2A68M-DG3+ + Procesador AMD APU A6 7400K + Memoria DDR3 8GB.",
+        "features": "<p> Soporta DDR3 2400+(OC) Dual Channel.</p>\n<p>Gráficos AMD Radeon™ HD R7/R5.</p>",
+        "price": "512.905",
+        "category": "Computación",
+        "Cant Stock": 2
+      }, 
+      {
+        "id": "K19382425",
+        "urlImagen": "https://i.linio.com/p/133e12c5886d20b6b222527fcb490a74-product.webp",
+        "name": "Memoria Ram PC XPG ",
+        "description": "Spectrix D45G DDR4 16GB 3600MHz RGB Blanco.",
+        "features": "<p> Velocidades: 3600 MT/s.</p>\n<p>Voltaje de operación: 1,35V.</p>",
+        "price": "305.000",
+        "category": "Computación",
+        "Cant Stock": 7
+      }
+    ]
+  }
