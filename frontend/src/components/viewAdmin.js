@@ -84,9 +84,10 @@ function PanelAdmin() {
                                 <h5>{elem.CantStock} en Stock!</h5>
                             </div>
                             <div className='my-admin-card-a'>
-                                <button id="btn-view"><i
-                                    className="fi fi-rr-eye"></i></button>
-                                <button id="btn-delete"><i className="fi fi-rr-trash" onClick={() => delProduct(elem)}></i></button>
+                                <button id="btn-view" onClick={() => { document.getElementById('viewProduct').style.display = 'block' }}>
+                                    <i className="fi fi-rr-eye"></i>
+                                    </button>
+                                <button id="btn-delete" onClick={() => delProduct(elem)}><i className="fi fi-rr-trash"></i></button>
                             </div>
                         </div>
                     )
@@ -142,6 +143,50 @@ function PanelAdmin() {
 
                         <button>Guardar!</button>
                         <button onClick={() => { document.getElementById('newProduct').style.display = 'none' }}>Cancelar</button>
+                    </footer>
+                </div>
+            </div>
+
+
+            <div id="viewProduct" className="w3-modal">
+                <div className="w3-modal-content w3-animate-top w3-card-4">
+                    <header>
+                        <h2>Información de Producto</h2>
+                    </header>
+                    <div className="w3-container">
+                        <p>
+                            <label>Nombre:</label>
+                            <input className="w3-input" type="text"></input>
+                        </p>
+                        <p>
+                            <label>Descripción:</label>
+                            <textarea className="w3-input" rows="4" cols="50"></textarea>
+                        </p>
+                        <p>
+                            <label>Características:</label>
+                            <textarea className="w3-input" rows="4" cols="50"></textarea>
+                        </p>
+                        <p>
+                            <label>Precio por unidad:</label>
+                            <input className="w3-input" type="number"></input>
+                        </p>
+                        <p>
+                            <label>Cantidad en Stock:</label>
+                            <input className="w3-input" type="number"></input>
+                        </p>
+                        <p>
+                            <label>Categoría:</label>
+                            <input className="w3-input" type="text"></input>
+                        </p>
+                        <p>
+                            <label>URL imagen:</label>
+                            <input className="w3-input" type="text"></input>
+                        </p>
+                    </div>
+                    <footer className="w3-container w3-blue">
+
+                        <button>Guardar!</button>
+                        <button onClick={() => { document.getElementById('viewProduct').style.display = 'none' }}>Cancelar</button>
                     </footer>
                 </div>
             </div>
