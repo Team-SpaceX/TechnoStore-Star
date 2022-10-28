@@ -1,0 +1,167 @@
+{
+    "clientes": [
+      {
+        "identificacion": "1047890432",
+        "apellido": "Bello",
+        "edad": "36",
+        "dirección": {
+          "calle": "calle 21",
+          "ciudad": "Barranquilla",
+          "localidad": "Atlantico",
+          "codigo postal": "80001"
+        },
+        "telefono": [
+          {
+            "tipo": "celular",
+            "numero": "312 4567893"
+          },
+          {
+            "tipo": "casa",
+            "numero": "345-4567"
+          }
+        ],
+        "nombre": "Marcela",
+        "correo": "marbello@gmail.com"
+      },
+      {
+        "identificacion": "8845278",
+        "apellido": "Pacheco",
+        "edad": 43,
+        "dirección": {
+          "calle": "calle 8",
+          "ciudad": "Barranquilla",
+          "localidad": "Atlantico",
+          "codigo postal": "80001"
+        },
+        "telefono": [
+          {
+            "tipo": "celular",
+            "numero": "313 2345987"
+          },
+          {
+            "tipo": "casa",
+            "numero": "321-3456"
+          }
+        ],
+        "nombre": "Orlando",
+        "correo": "opacheco@gmail.com"
+      }
+      {
+        "identificacion": "1023478296",
+        "apellido": "Ricardo",
+        "edad": "22",
+        "dirección": {
+          "calle": "calle 14",
+          "ciudad": "Barranquilla",
+          "localidad": "Atlantico",
+          "codigo postal": "80001"
+        },
+        "telefono": [
+          {
+            "tipo": "celular",
+            "numero": "314 6721893"
+          },
+          {
+            "tipo": "casa",
+            "numero": "321-8217"
+          }
+        ],
+        "nombre": "Carolina",
+        "correo": "caricardo@gmail.com"
+      },
+      {
+        "identificacion": "8345620",
+        "apellido": "Torres",
+        "edad": "48",
+        "dirección": {
+          "calle": "calle 8",
+          "ciudad": "Barranquilla",
+          "localidad": "Atlantico",
+          "codigo postal": "80001"
+        },
+        "telefono": [
+          {
+            "tipo": "celular",
+            "numero": "322 4721510"
+          },
+          {
+            "tipo": "casa",
+            "numero": "332-1054"
+          }
+        ],
+        "nombre": "Manuel",
+        "correo": "matorres@gmail.com"
+      },
+      {
+        "identificacion": "1047325867",
+        "apellido": "Gaitan",
+        "edad": "33",
+        "dirección": {
+          "calle": "calle 21",
+          "ciudad": "Barranquilla",
+          "localidad": "Atlantico",
+          "codigo postal": "80001"
+        },
+        "telefono": [
+          {
+            "tipo": "celular",
+            "numero": "320 327011"
+          },
+          {
+            "tipo": "casa",
+            "numero": "321-4234"
+          }
+        ],
+        "nombre": "Gabriela",
+        "correo": "gagaitan@gmail.com"
+      }
+    ],
+    "administradores": [
+      {
+        "identificacion": "73098723",
+        "apellido": "Pacheco",
+        "edad": "37",
+        "dirección": {
+          "calle": "calle 93",
+          "ciudad": "Barranquilla",
+          "localidad": "Atlantico",
+          "codigo postal": "80001"
+        },
+        "telefono": [
+          {
+            "tipo": "celular",
+            "numero": "312 6459278"
+          },
+          {
+            "tipo": "casa",
+            "numero": "341-4317"
+          }
+        ],
+        "nombre": "Carlos",
+        "correo": "cpacheco@gmail.com"
+      },
+      {
+        "identificacion": "1067743756",
+        "apellido": "Fortich",
+        "edad": 36,
+        "dirección": {
+          "calle": "calle 72",
+          "ciudad": "Barranquilla",
+          "localidad": "Atlantico",
+          "codigo postal": "80001"
+        },
+        "telefono": [
+          {
+            "tipo": "celular",
+            "numero": "313 78432517"
+          },
+          {
+            "tipo": "casa",
+            "numero": "362-9170"
+          }
+        ],
+        "nombre": "Sandra",
+        "correo": "sanfortich@gmail.com"
+      }
+    ]
+  }

@@ -1,35 +1,69 @@
-
-    {
-      "fecha": "10/10/2022",
-      "idCliente": "1001",
-      "idVenta": "123",
-      "valor": 200000,
-      "confirmado": true,
-      "detalleCompra": [
-        {
-          "idProducto": "101",
-          "cantidad": 2
-        },
-        {
-          "idProducto": "108",
-          "cantidad": 1
-        },
-        {
-          "idProducto": "103",
-          "cantidad": 5
-        }
-      ]
-    },
-    {
-      "fecha": "20/10/2022",
-      "idCliente": "1002",
-      "idVenta": "1234",
-      "valor": 500000,
-      "confirmado": true,
-      "detalleCompra": [
-        {
-          "idProducto": "105",
-          "cantidad": 3
-        }
-      ]
-    }
+{
+    "ventas": [
+      {
+        "fecha": "12/10/2022",
+        "idCliente": "1047890432",
+        "idVenta": "201",
+        "valor": "695.000",
+        "confirmado": true,
+        "detalleCompra": [
+          {
+            "idProducto": "W76218114",
+            "cantidad": 2
+          }
+        ]
+      },
+      {
+        "fecha": "13/10/2022",
+        "idCliente": "8845278",
+        "idVenta": "202",
+        "valor": "4.926.900",
+        "confirmado": false,
+        "detalleCompra": [
+          {
+            "idProducto": "B345267189",
+            "cantidad": 1
+          }
+        ]
+      },
+      {
+        "fecha": "14/10/2022",
+        "idCliente": "1023478296",
+        "idVenta": "203",
+        "valor": "229.900",
+        "confirmado": true,
+        "detalleCompra": [
+          {
+            "idProducto": "D25641589",
+            "cantidad": 6
+          }         
+        ]
+      },
+      {
+        "fecha": "14/10/2022",
+        "idCliente": "8345620",
+        "idVenta": "204",
+        "valor": "1.700.900",
+        "confirmado": true,
+        "detalleCompra": [
+          {
+            "idProducto": "J47586923",
+            "cantidad": 2
+          }
+        ]
+      },
+      {
+        "fecha": "15/10/2022",
+        "idCliente": "1047325867",
+        "idVenta": "205",
+        "valor": "5.000.000",
+        "confirmado": true,
+        "detalleCompra": [
+          {
+            "idProducto": "M73518017",
+            "cantidad": 1
+          }
+        ]
+      }
+    ]
+  }
