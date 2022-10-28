@@ -5,7 +5,7 @@
     "name": "Tarjeta de video AMD 4GB",
     "description": "AMD XFX QICK 210 Radeon RX 6500 Series RX 6500 XT RX-65XT4DBDQ Black Edition",
     "features": "<p> Frecuencia boost del núcleo de 2825MHz </p>\n<p>base de 2420MHz</p>",
-    "price": "1.049.900",
+    "price": 1049900,
     "category": "Tecnologia",
     "CantStock": 13
   },
@@ -15,7 +15,7 @@
     "name": "Tarjeta de video Nvidia MSI",
     "description": "Gaming X GeForce GTX 16 Series GTX 1650 SUPER GEFORCE GTX 1650 SUPER GAMING X 4GB.",
     "features": "<p> Graphic memory GDDR6</p>\n<p>Interface PCI-Express 3.0</p>",
-    "price": "4.926.900",
+    "price": 4926900,
     "category": "Tecnologia",
     "CantStock": 14
   },
@@ -25,7 +25,7 @@
     "name": "Tarjeta de video Nvidia Evga SC",
     "description": "Gaaming GeForce RTX 20 Series RTX 2060 06G-P4-2062-KR 6GB.",
     "features": "<p> Frecuencia boost del núcleo de 1710MHz</p>\n<p>Resolución máxima: 7680x4320</p>",
-    "price": "2.245.975",
+    "price": 2245975,
     "category": "Tecnologia",
     "CantStock": 9
   },
@@ -35,7 +35,7 @@
     "name": "Tarjeta de video AMD Asus Dual Radeon",
     "description": "6600 Series RX 6600 XT DUAL-RX6600XT-O8G OC Edition 8GB.",
     "features": "<p> Compatible con directX y openGL</p>\n<p>Admite hasta 4 monitores</p>",
-    "price": "2.227.708",
+    "price": 2227708,
     "category": "Tecnologia",
     "CantStock": 16
   },
@@ -45,7 +45,7 @@
     "name": "Tarjeta de video AMD MSI Radeon",
     "description": "6600 Series RX 6600 RADEON RX 6600 MECH 2X 8G 8GB.",
     "features": "<p> Frecuencia boost del núcleo de 2491MHz</p>\n<p>Compatible con directX y openGL</p>",
-    "price": "2.850.000",
+    "price": 2850000,
     "category": "Tecnologia",
     "CantStock": 19
   },
@@ -55,7 +55,7 @@
     "name": "Memoria Ram DRR4 XPG",
     "description": "Gammix D10 8GB 3200MHz.",
     "features": "<p> overclocking</p>\n<p>Compatibles con la nueva implementación Intel X299</p>",
-    "price": "229.900",
+    "price": 229900,
     "category": "Tecnologia",
     "CantStock": 10
   },
@@ -65,7 +65,7 @@
     "name": "Memoria RAM Vengeance LPX",
     "description": "Optimiza el rendimiento de tu máquina con la tecnología DDR4 DRAM.",
     "features": "<p> Gamer color negro</p>\n<p>16GB</p>",
-    "price": "294.800",
+    "price": 294800,
     "category": "Tecnologia",
     "CantStock": 18
   },
@@ -75,7 +75,7 @@
     "name": "Tarjeta de video AMD XFX Radeon",
     "description": "RX 6600 RX-66XL8LFDQ 8GB.",
     "features": "<p> Interfaz PCI-Express 4.0.</p>\n<p>Compatible con directX y openGL</p>",
-    "price": "1.647.264",
+    "price": 1647264,
     "category": "Tecnologia",
     "CantStock": 21 
   },
@@ -85,7 +85,7 @@
     "name": "Tarjeta de video AMD Biostar Radeon",
     "description": "Radeon RX 6600 Series Radeon RX6600 VA6606RM81 8GB.",
     "features": "<p> Interfaz PCI-Express 4.0.</p>\n<p>DisplayPort, HDMI.</p>",
-    "price": "1.700.900",
+    "price": 1700900,
     "category": "Tecnologia",
     "CantStock": 13
   },
@@ -95,7 +95,7 @@
     "name": "Tarjeta de video AMD",
     "description": "Gigabyte Eagle Radeon 6600 Series RX 6600 GV-R66EAGLE-8GD 8GB.",
     "features": "<p> Interfaz PCI-Express 4.0.</p>\n<p>Frecuencia boost del núcleo de 2491MHz.</p>",
-    "price": "1.850.000",
+    "price": 1850000,
     "category": "Tecnologia",
     "CantStock": 14
   },
@@ -105,7 +105,7 @@
     "name": "Procesador gamer AMD Ryzen 5",
     "description": "3600X 100-100000022BOX de 6 núcleos y 4.4GHz de frecuencia.",
     "features": "<p> Potencia de 95 W.</p>\n<p>Soporta memoria RAM DDR4.</p>",
-    "price": "5.000.000",
+    "price": 5000000,
     "category": "Tecnologia",
     "CantStock": 11
   }, 
@@ -115,7 +115,7 @@
     "name": "Procesador gamer Intel Core i5",
     "description": "11400 BX8070811400 de 6 núcleos y 4.4GHz de frecuencia con gráfica integrada.",
     "features": "<p> Potencia de 65 W.</p>\n<p>Soporta memoria RAM DDR4.</p>",
-    "price": "945.000",
+    "price": 945000,
     "category": "Tecnologia",
     "CantStock": 13
   }, 
@@ -125,7 +125,7 @@
     "name": "Procesador Intel Core i5",
     "description": "11400 BX8070811400 de 6 núcleos y 4.4GHz de frecuencia con gráfica integrada.",
     "features": "<p> Potencia de 117 W.</p>\n<p>Soporta memoria RAM DDR5, DDR4.</p>",
-    "price": "1.025.000",
+    "price": 1025000,
     "category": "Tecnologia",
     "CantStock": 6
   }, 
@@ -135,7 +135,7 @@
     "name": "Procesador gamer AMD Ryzen 5",
     "description": "5600G 100-100000252BOX de 6 núcleos y 4.4GHz de frecuencia con gráfica integrada.",
     "features": "<p> Potencia de 65 W.</p>\n<p>Soporta memoria RAM DDR4.</p>",
-    "price": "778.800",
+    "price": 778800,
     "category": "Tecnologia",
     "CantStock": 9
   }, 
@@ -145,7 +145,7 @@
     "name": "Procesador gamer AMD Ryzen 7",
     "description": "3700X 100-100000071BOX de 8 núcleos y 4.4GHz de frecuencia.",
     "features": "<p> Potencia de 65 W.</p>\n<p>Soporta memoria RAM DDR4.</p>",
-    "price": "1.332.850",
+    "price": 1332850,
     "category": "Tecnologia",
     "CantStock": 4
   }, 
@@ -155,7 +155,7 @@
     "name": "El Gato Hd60 S+ Sistema De Captura De Juego Usb 3.0",
     "description": "Con el HD60 S+, disfruta de tus juego triple A en toda su espectacularidad gráfica y aumenta fácilmente tu calidad de producción.",
     "features": "<p> HD60 S+.</p>\n<p>funciona con OBS Studio, Streamlabs OBS, XSplit.</p>",
-    "price": "883.670",
+    "price": 883670,
     "category": "Tecnologia",
     "CantStock": 6
   }, 
@@ -165,7 +165,7 @@
     "name": "Chasis Corsair Icue 4000x Rgb Black",
     "description": "El CORSAIR iCUE 4000X RGB es un gabinete ATX semitorre de vidrio templado.",
     "features": "<p> SKU CC-9011204-WW.</p>\n<p>iCUE 4000X RGB Tempered Glass Mid-Tower ATX Case — Black.</p>",
-    "price": "695.000",
+    "price": 695000,
     "category": "Computación",
     "CantStock": 3
   }, 
@@ -175,7 +175,7 @@
     "name": "Refrigeracion Liquida Corsair Icue H170i Elite Lcd",
     "description": "Ventiladores de próxima generación para potenciar la refrigeración de CPU.",
     "features": "<p> SWater cooling.</p>\n<p>Refrigeración de alto rendimiento.</p>",
-    "price": "2.179.000",
+    "price": 2179000,
     "category": "Computación",
     "CantStock": 1
   }, 
@@ -185,7 +185,7 @@
     "name": "Combo Board Asrock Fm2 Procesador A6 7400k Radeon Ram 8gb Pc",
     "description": "Combo Board ASRock FM2A68M-DG3+ + Procesador AMD APU A6 7400K + Memoria DDR3 8GB.",
     "features": "<p> Soporta DDR3 2400+(OC) Dual Channel.</p>\n<p>Gráficos AMD Radeon™ HD R7/R5.</p>",
-    "price": "512.905",
+    "price": 512905,
     "category": "Computación",
     "CantStock": 2
   }, 
@@ -195,7 +195,7 @@
     "name": "Memoria Ram PC XPG ",
     "description": "Spectrix D45G DDR4 16GB 3600MHz RGB Blanco.",
     "features": "<p> Velocidades: 3600 MT/s.</p>\n<p>Voltaje de operación: 1,35V.</p>",
-    "price": "305.000",
+    "price": 305000,
     "category": "Computación",
     "CantStock": 7
   }

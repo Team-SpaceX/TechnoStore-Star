@@ -25,9 +25,5 @@ function viewAdmin() {
 function viewCustomer() {
     setChooseView(chooseView = <ViewCustomer />)
 }
-    return (
-        <div>{chooseView}</div>
-        
-             
-    )
+    return (chooseView)
 }

@@ -1,0 +1,105 @@
+/* section offers */
+.my-category-offers{
+    background-color: #FFFF;
+  }
+  
+  .my-container-offers{
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFF;
+    padding: 0;
+    display: flex;
+    flex-flow: wrap;
+  }
+  
+  /* offers cards */
+  .my-card{
+    margin: 1rem 1rem 1rem 1rem;
+    background-color: #FFFF;
+    position: relative;
+    width: 300px;
+    height: 500px;
+    text-align: left;
+    border-radius: 0px 0px 18px 18px;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 12%);
+    transition:all 0.2s;
+    border:0.5px groove rgb(0 0 0 / 10%)!important
+  }
+  
+  .my-card:hover{
+    box-shadow: 0 1px 5px 0 rgb(0 0 0 / 50%);
+  }
+  
+  /* Body cards */
+  .my-card-image{
+    width: 100%; 
+    height: 300px; 
+    object-fit: cover; 
+    box-sizing: border-box;
+    background-color: var(--white-color);
+    border-bottom:0.5px groove rgb(0 0 0 / 10%)!important
+  }
+  .my-card-title{
+    font-size: 1.6rem;
+    color: var(--blue-dark-color);
+    margin: 0;
+  }
+  .my-card-category{
+      font-size: 1.4rem;
+    color: var(--gray-color);
+    margin: 0;
+  }
+  .my-card-r-price{
+    font-size: 1.4rem;
+    color: var(--gray-color);
+    margin: 0;
+  }
+  .my-card-r-price span{
+    text-decoration-line: line-through;
+  }
+  .my-card-o-price{
+    font-size: 2.5rem;
+    color: var(--blue-color);
+    margin: 0;
+  }
+  .my-card-discount{
+    font-size: 1.8rem;
+    color: var(--red-color); 
+  }
+  .my-card-s-price{
+    font-size: 1.5rem;
+    color: var(--blue-light-color); 
+    margin: 0;
+  }
+  .my-card-stock{
+    font-size: 1.5rem;
+    color: var(--gray-color); 
+    margin: 0;
+  }
+  .my-button-card-cart{
+    color: var(--blue-light-color) !important;
+    border: 2px solid var(--blue-light-color);
+    background-color: #FFFF;
+    text-align: center;
+    line-height: 0;
+    cursor:pointer;
+    white-space:nowrap;
+    font-size: 2rem;
+    border-radius: 50%;
+    height:4rem;
+    width: 4rem;
+    box-sizing: border-box;
+  }
+  .my-button-card-cart:hover{
+    background-color:var(--blue-light-color);
+    color: var(--white-color) !important;
+    transition: all 0.5s;
+  }
+  /* Lines */
+.line-h{
+    width: 90%;
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    border-bottom:0.5px groove var(--gray-color) !important
+  }
