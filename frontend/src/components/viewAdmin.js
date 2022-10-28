@@ -3,6 +3,8 @@ import '../styles/styleViewAdmin.css';
 import ChooseView from "./chooseView";
 import Footer from "./footer";
 import dbProducts from '../productos.json';
+import dbSales from '../ventas.json';
+
 //nav-bar
 import NavAdmin from "./navAdmin";
 
@@ -36,22 +38,29 @@ function PanelAdmin() {
     function delProduct(data) {
         document.getElementById('delProduct').style.display = 'block';
         document.getElementById('modalMessage').innerHTML = "<p>¿Está seguro de eliminar el producto " + data.name + " ?</p>";
-
     }
-
 
     //changes  the view status to the main panel
     function viewMain() {
         document.getElementById('sectionTitle').innerText = 'Panel Principal';
-        setViewProducts(viewProducts = [])
+        setViewProducts(viewProducts = []);
+        setViewSales(viewSales = []);
     }
     //list of the products on screen
     function listProducts() {
         document.getElementById('sectionTitle').innerText = 'Mis Productos';
         setViewProducts(viewProducts = dbProducts);
-
+        setViewSales(viewSales = []);
     }
+    //list of the sales on screen
+    function salesList() {
+        document.getElementById('sectionTitle').innerText = 'Lista de Ventas';
+        setViewSales(viewSales = dbSales);
+        setViewProducts(viewProducts = [])
+    }
+
     let [viewProducts, setViewProducts] = useState([]);
+    let [viewSales, setViewSales] = useState([]);
     return (
         <div className="w3-row">
             <div className='w3-col m3 my-admin-sidebar'>
@@ -61,16 +70,18 @@ function PanelAdmin() {
                     </div>
                     <ul>
                         <li onClick={listProducts}>Lista de productos</li>
-                        <li>Lista de ventas</li>
+                        <li onClick={salesList}>Lista de ventas</li>
                     </ul>
                     <hr></hr>
                     <button id="btn-add" onClick={() => { document.getElementById('newProduct').style.display = 'block' }}>Nuevo
                         Producto!</button>
                 </div>
             </div>
+
             <div className="w3-col m9 my-admin-content">
                 <h1 id="sectionTitle">Panel principal</h1>
                 <hr></hr>
+
                 {viewProducts.map((elem, idx) => {
                     return (
                         <div className="w3-col my-admin-card" key={elem.id}>
@@ -92,7 +103,44 @@ function PanelAdmin() {
                         </div>
                     )
                 })}
+
+                        {/* SI SE COLOCA EL MAP AQUI    
+                        
+                        ({viewSales.map((elem, idx) => {
+                                    return (),     
+                                    
+                                    SE REPITE EL ENCABEZADO */}
+
+                            <div className="w3-col w3-responsive">
+                                <table className="w3-table-all">
+                                    <tbody>
+                                        <tr className="w3-indigo">
+                                            <th>Id Venta</th>
+                                            <th>Fecha</th>
+                                            <th>Total Venta</th>
+                                            <th>Detalle Venta</th>
+                                            <th>Eliminar</th>
+                                        </tr>
+                                    </tbody>
+                                    <tbody>
+                                {viewSales.map((elem, idx) => {
+                                    return (
+                                        <tr key={elem.idVenta}>
+                                            <td>{elem.idVenta}</td>
+                                            <td>{elem.fecha}</td>
+                                            <td>$ {elem.valor}</td>
+                                            <td><button className="w3-button w3-border w3-round w3-hover-indigo w3-border-blue w3-small">Detalle </button>
+                                            </td>
+                                            <td><button className="w3-button w3-border w3-round w3-hover-red w3-border-blue w3-small">Eliminar</button></td>
+                                        </tr>
+                                    );
+                                })}
+                                    </tbody>
+                                </table>
+                            </div>
+                        
             </div>
+
             <div id="delProduct" className="w3-modal">
                 <div className="w3-modal-content w3-animate-top w3-card-4">
                     <div className="w3-container" id="modalMessage">
