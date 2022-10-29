@@ -2,7 +2,8 @@ import React from "react";
 
 function EditProduct (){
 
-    function enabledInput(x,y,z) {
+    function enabledInput(x,y,z,w) {
+        document.getElementById('my-footer-modal').setAttribute('style', w );
         document.getElementById('btn-edit').style.display = z;
         document.getElementById('btn-vProduct').style.display = y;
         document.getElementById('edit-name').readOnly = x;
@@ -52,9 +53,9 @@ function EditProduct (){
                     <input id="edit-urlImagen" className="w3-input" type="text" readOnly></input>
                 </p>
             </div>
-            <footer id="footer-modal" className="w3-container w3-blue">
+            <footer id="my-footer-modal" className="w3-container w3-blue">
             <button id="btn-edit">Guardar!</button>
-                <button id="btn-vProduct" onClick={() => {enabledInput(false,"none","inline")}}>Editar!</button>
+                <button id="btn-vProduct" onClick={() => {enabledInput(false,"none","inline","background-color: var(--yellow-color) !important;")}}>Editar!</button>
                 <button onClick={() => { document.getElementById('viewProduct').style.display = 'none';enabledInput(true,"inline","none") }}>Cancelar</button>
             </footer>
         </div>

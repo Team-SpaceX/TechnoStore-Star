@@ -3,7 +3,7 @@
         "fecha": "12/10/2022",
         "idCliente": "1047890432",
         "idVenta": "201",
-        "valor": "695.000",
+        "valor": 695000,
         "confirmado": true,
         "detalleCompra": [
           {
@@ -16,7 +16,7 @@
         "fecha": "13/10/2022",
         "idCliente": "8845278",
         "idVenta": "202",
-        "valor": "4.926.900",
+        "valor": 4926900,
         "confirmado": false,
         "detalleCompra": [
           {
@@ -29,7 +29,7 @@
         "fecha": "14/10/2022",
         "idCliente": "1023478296",
         "idVenta": "203",
-        "valor": "229.900",
+        "valor": 229900,
         "confirmado": true,
         "detalleCompra": [
           {
@@ -42,7 +42,7 @@
         "fecha": "14/10/2022",
         "idCliente": "8345620",
         "idVenta": "204",
-        "valor": "1.700.900",
+        "valor": 1700900,
         "confirmado": true,
         "detalleCompra": [
           {
@@ -55,7 +55,7 @@
         "fecha": "15/10/2022",
         "idCliente": "1047325867",
         "idVenta": "205",
-        "valor": "5.000.000",
+        "valor": 5000000,
         "confirmado": true,
         "detalleCompra": [
           {
