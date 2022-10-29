@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import ChooseView from "./chooseView";
 import Header from "./header";
 import Footer from "./footer";
 import CustomerListProducts from "./customerListProducts";
@@ -9,9 +8,6 @@ import CustomerCart from "./customerCart";
 //View component
 export default function ViewCustomer() {
 
-    const goBack = () => {
-        setViewCustomer(viewCustomer = <ChooseView />)
-    }
     const goCart = () => {
       setViewCustomer(viewCustomer = <CustomerCart/>)
     }
@@ -19,7 +15,6 @@ export default function ViewCustomer() {
     let init =<div id="return viewCustomer2">
             <Header />
             <PanelCustomer />
-            <button className="w3-display-bottomright" onClick={goBack}>Volver</button>
             <button className="w3-display-bottomright" onClick={goCart}>GoCArt!</button>
             <Footer />
             </div>;

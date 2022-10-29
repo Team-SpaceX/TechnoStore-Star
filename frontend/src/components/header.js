@@ -29,7 +29,7 @@ const Header = () => {
                 <i className="fi fi-rr-user"></i>
                 </button>
                 <div className="w3-dropdown-content w3-bar-block w3-card-4">
-                <a href="#" className="w3-bar-item w3-button">Perfil</a>
+                <Link to="/admin/" className="w3-bar-item w3-button">Perfil</Link>
                 <a href="#" className="w3-bar-item w3-button">
                     <i className="fa-solid fa-arrow-right-from-bracket"></i>
                     Salir

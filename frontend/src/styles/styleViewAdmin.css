@@ -25,7 +25,7 @@
     width: 80%;
     margin-left: 10%;
     padding-top: 2rem;
-    margin-top: 10rem;
+    margin-top: 3rem;
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 12%);
     border-radius: 5px;
   }
@@ -89,7 +89,12 @@
 
   /* admin product card*/
   .w3-container .my-admin-content{
+    font-family: 'Roboto', sans-serif;
     padding-left: 6%;
+  }
+
+  .w3-container .my-admin-content h1{
+    font-family: 'Roboto', sans-serif;
   }
   .w3-container .my-admin-content{
     text-align: left;
@@ -287,3 +292,20 @@
      text-shadow: 1px 1px black;
      }
      
+     /* btn-view product */
+     #btn-edit{
+      display: none;
+     }
+
+     /* VIEW SALES */
+     .my-totalVentas h2{
+      font-family: 'Roboto', sans-serif;
+      font-size: 2.5rem;
+     }
+     .my-totalVentas h2 span{
+      font-family: 'Roboto Black', sans-serif;
+      font-size: 2.8rem;
+     }
+     .w3-col .m9 .my-admin-content table{
+      font-family: 'Roboto', sans-serif;
+     }
