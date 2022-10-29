@@ -7,9 +7,10 @@
     justify-content: center;
     align-items: center;
     background-color: #FFFF;
-    padding: 0;
+    padding: 1%;
     display: flex;
-    flex-flow: wrap;
+    flex-flow: wrap; 
+    flex: 1;
   }
   
   /* offers cards */

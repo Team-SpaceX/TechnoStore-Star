@@ -11,6 +11,7 @@
   
   .cart-body{
     margin: 16px 5%;
+    flex: 1;
   }
   .cart-content{
   background-color: #fff;

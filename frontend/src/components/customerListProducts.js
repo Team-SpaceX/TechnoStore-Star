@@ -63,7 +63,7 @@ function CustomerListProducts (){
             </div>
   
             <div className="w3-col w3-right-align" style={{width:"50%"}}>
-              <button id={"my-button-card-cart-"+index} className="my-button-card-cart" onClick={function() {numberCart(); onoff(this);}}><i className="fi fi-rr-shopping-cart"></i></button>
+              <button id={"my-button-card-cart-"+index} className="my-button-card-cart" onClick={function() {numberCart(); /*onoff(this);*/}}><i className="fi fi-rr-shopping-cart"></i></button>
             </div>
             </div>
           </div>

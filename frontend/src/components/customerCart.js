@@ -24,7 +24,7 @@ viewCart.map((item, index) => {return (total+=item.price)})
         {viewCart.map((item, index) => {
         return (
         <div class="w3-cell-row cart-content-item">
-          <div class="w3-cell  w3-cell-middle" style={{width:"91px"}}>
+          <div class="w3-cell  w3-cell-middle" style={{width:"200px"}}>
             <img class="cart-item-image" src={item.urlImagen} alt={item.name}/>
           </div>
           <div class="w3-cell  w3-cell-middle w3-padding-small">
@@ -32,9 +32,9 @@ viewCart.map((item, index) => {return (total+=item.price)})
             <p> Precio und. <span class="cart-item-price">{pesoCO.format(item.price)}<sup class="my-card-discount">{percent.format(-Math.random()/2)}</sup></span>
             </p>
           </div>
-          <div class="w3-cell  w3-cell-middle" style={{textAlign: "center"}}>
+          <div class="w3-cell  w3-cell-middle" style={{textAlign: "center", width:"200px"}}>
             <p> Cantidad </p>
-            <div class="w3-border w3-round-xlarge ">
+            <div class="w3-border w3-round-xlarge" style={{width: "80px", display: "inline-block"}}>
               <input id="inputCant" type="number" class="cart-qty-input" min={1} defaultValue={1}></input>
             </div>
             <hr style={{border: 0, margin: "10px 0"}}/>

@@ -8,7 +8,7 @@ import NewProduct from "./newProduct";
 
 export default function ViewAdmin() {
     
-    let init =  <div className="view-admin">
+    let init =  <div className="view-admin" style={{flex: 1, margin: "1%"}}>
                     <div className="w3-container">
                         <PanelAdmin />
                     </div>
