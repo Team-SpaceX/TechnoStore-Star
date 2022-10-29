@@ -76,7 +76,7 @@ nav{
   .my-button{
     position: relative;
   }
-  .my-button sup{
+  .my-number-cart{
     position: absolute;
     top: 0;
     left: 40%;

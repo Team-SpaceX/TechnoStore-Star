@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 import '../styles/styleHeader.css';
 
 const Header = () => {
@@ -8,9 +9,9 @@ const Header = () => {
         <nav>
         <div className="w3-bar">
             <div className="w3-bar-item w3-mobile">
-            <a href="admin.html" id="logo">
+            <Link to='/' id="logo">
                 <img src="./img/Logo-Tecnostore.svg" alt="TechnoStore-Star logo"/>
-            </a>
+            </Link>
             </div>
             <div id="bar-search">
             <input type="text" className="w3-bar-item w3-input w3-white w3-mobile" placeholder="Buscar productos..." />
@@ -19,10 +20,10 @@ const Header = () => {
             </button>
             </div>
             <div className="w3-bar-item w3-right">
-            <a href="#" className="w3-bar-item my-button">
+            <Link to='/user/cart' className="w3-bar-item my-button">
                 <i className="fi fi-rr-shopping-cart"></i>
-                <sup>3</sup>
-            </a>
+                <sup id="numberCart"></sup>
+            </Link>
             <div className="w3-dropdown-hover">
                 <button className="my-button">
                 <i className="fi fi-rr-user"></i>

@@ -8,13 +8,13 @@
     padding-top: 10%;
 }
 
-.choose-view .w3-container .w3-card button{ 
+.choose-view .w3-container .w3-card .btn{ 
     margin-top: 10px;
     margin-bottom: 20px;
     background-color: var(--blue-light-color) !important;
 }
 
-.choose-view .w3-container .w3-card button:hover{
+.choose-view .w3-container .w3-card .btn:hover{
     color: var(--white-color) !important;
     font-family: 'Roboto black', sans-serif !important;
     background-color: var(--blue-dark-color) !important;

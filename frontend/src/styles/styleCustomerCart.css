@@ -1,0 +1,109 @@
+/* VIEW CART */
+
+/* cart body*/
+.cart-title{
+    font-family: 'Roboto Black', sans-serif;
+    font-size: 2.5rem;
+    color: var(--blue-dark-color);
+    margin: 0;
+    list-style: none;
+  }
+  
+  .cart-body{
+    margin: 16px 5%;
+  }
+  .cart-content{
+  background-color: #fff;
+  border:0.5px groove rgb(0 0 0 / 10%)!important;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 12%)
+  }
+  .cart-content-item{
+    top: 16px;
+    text-align: left;
+    border-top:0.5px groove rgb(0 0 0 / 15%)!important;
+    padding: 3px;
+  }
+  .cart-item-name{
+    font-size: 1.7rem;
+    margin: 0;
+  }
+  .cart-item-price{
+    font-size: 2.5rem;
+    color: var(--blue-color);
+    margin: 0;
+  }
+  .cart-item-image{
+    width: 200px; 
+    height: 200px; 
+    object-fit: cover; 
+    box-sizing: border-box;
+    background-color: var(--white-color);
+    border:0.5px groove rgb(0 0 0 / 10%)!important
+  }
+  .cart-qty-input {
+  margin: 0 4px;
+  height: 24px;
+  width: 32px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-align: center;
+  outline: 0;
+  font-size: 1.7rem;
+  }
+  .cart-item-delete{
+    border: 0px solid var(--red-color);
+    background-color:rgba(0, 0, 0, 0);
+    text-align: center;
+    line-height: 0;
+    cursor:pointer;
+    white-space:nowrap;
+    font-size: 1.8rem;
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    box-sizing: border-box;
+    padding: 0;
+  }
+  .cart-item-delete:hover{
+    background-color:rgba(0, 0, 0, 0)!important;
+    color: var(--red-color) !important;
+    transition:all 0.5s;
+  }
+  .cart-button-checkout{
+    color: var(--blue-light-color) !important;
+    border: 2px solid var(--blue-light-color);
+    background-color: #FFFF;
+    text-align: center;
+    line-height: 0;
+    cursor:pointer;
+    white-space:nowrap;
+    font-size: 1.6rem;
+    border-radius: 12px;
+    height: 4rem;
+    box-sizing: border-box;
+  }
+  .cart-button-checkout:hover{
+    background-color:var(--blue-light-color)!important;
+    color: var(--white-color) !important;
+    transition:all 0.5s;
+  }
+  .cart-button-cancel{
+    color: var(--red-color)!important;
+    border: 2px solid var(--red-color);
+    background-color: #FFFF;
+    text-align: center;
+    line-height: 0;
+    cursor:pointer;
+    white-space:nowrap;
+    font-size: 1.6rem;
+    border-radius: 12px;
+    height: 4rem;
+    box-sizing: border-box;
+  }
+  .cart-button-cancel:hover{
+    background-color:var(--red-color)!important;
+    color: var(--white-color) !important;
+    transition:all 0.5s;
+  }

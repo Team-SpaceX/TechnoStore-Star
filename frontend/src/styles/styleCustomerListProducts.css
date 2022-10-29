@@ -95,6 +95,26 @@
     color: var(--white-color) !important;
     transition: all 0.5s;
   }
+  .my-button-card-cart-active{
+
+    border: 2px solid var(--blue-color);
+    background-color:var(--blue-color);
+    color: var(--white-color) !important;
+    text-align: center;
+    line-height: 0;
+    cursor:pointer;
+    white-space:nowrap;
+    font-size: 2rem;
+    border-radius: 50%;
+    height:4rem;
+    width: 4rem;
+    box-sizing: border-box;
+  }
+  .my-button-card-cart-active:hover{
+    background-color:var(--blue-light-color);
+    color: var(--white-color) !important;
+    transition: all 0.5s;
+  }
   /* Lines */
 .line-h{
     width: 90%;
