@@ -5,7 +5,7 @@ const {getProducts, newProduct, getProductById, updateProduct, deleteProduct} = 
 
 //Rutas de accceso por Back
 router.route('/productos').get(getProducts) //Listar productos
-router.route('/producto/nuevo').get(newProduct) //Agregar producto
+router.route('/producto/nuevo').post(newProduct) //Agregar producto
 router.route('/producto/:id').get(getProductById) //Traer un producto por ID
 router.route('/producto/:id').put(updateProduct) // Acutalizar un producto
 router.route('/producto/:id').delete(deleteProduct) // Eliminar un producto
