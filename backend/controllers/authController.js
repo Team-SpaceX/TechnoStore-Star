@@ -9,3 +9,14 @@ exports.newUser= async(req,res,next) =>{
         user
     })
 }
+
+//Listar usuarios
+exports.getUsers=async (req,res,next) =>{
+    const users= await User.find();
+    //Trae todos los usuarios de la coleccion y su cantidad
+    res.status(200).json({
+        success:true,
+        count: users.length,
+        users
+    })
+}

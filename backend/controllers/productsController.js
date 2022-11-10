@@ -79,3 +79,21 @@ exports.deleteProduct= async (req,res,next) =>{
         message:`Producto con id ${req.params.id} eliminado correctamente`
     })
 }
+
+/*=====================
+RUTAS PARA LOS CLIENTES
+=====================*/
+
+//Listar productos con stock > 0
+exports.getProductsInStock=async (req,res,next) =>{
+    const products= await product.find();
+    const filterProducts = products.filter(function(element){
+        return element.Stock > 0;
+      });
+    //Trae todos los productos de la coleccion y su cantidad
+    res.status(200).json({
+        success:true,
+        count: filterProducts.length,
+        filterProducts
+    })
+}

@@ -1,4 +1,7 @@
+const { model } = require("mongoose");
 const Order= require("../models/order");
+const Auth= require("../models/auth");
+const Product= require("../models/product");
 
 //Crear un nuevo pedido
 exports.newOrder= async(req,res,next) =>{
@@ -31,7 +34,9 @@ exports.newOrder= async(req,res,next) =>{
 
 //Ver todos los pedidos
 exports.getAllOrders= async(req,res,next) =>{
-    const orders= await Order.find()
+    //populate => Trae algunos campos de los productos referenciados
+    const orders= await Order.find().populate({path: "items.product",select:'_id name category price image discount stock',model: "Producto"})
+    .populate({path: "user",select:'_id name email', model: "Usuario"});
     //Calcula el total de ventas
     let total= 0;
     orders.forEach(order =>{
