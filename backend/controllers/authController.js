@@ -20,3 +20,45 @@ exports.getUsers=async (req,res,next) =>{
         users
     })
 }
+
+//Iniciar Sesion - Login
+exports.loginUser = async (req, res, next) => {
+    const {email, password}= req.body;
+    
+    //Validacion de los campos completos
+    if(!email  || !password){
+        return next.status(400).json({
+            success:false,
+            message: 'Por favor ingrese un email y contraseña'
+            })
+    }
+    
+    //Validacion del usuario en la base de datos
+    const user = await User.findOne({$and:[{email:email},{password:password}]})
+    if (!user){
+        return next.status(401).json({
+        success:false,
+        message: 'Email o contraseña invalidos!'
+        })
+    }
+
+    //Crea la cookie y envia el response
+    res.status(200).cookie("idUser", user._id).json({
+        success:true,
+        message: 'Usuario inicio sesion!',
+        user,
+    })
+}
+
+//Cerrar sesion (logout)
+exports.logOut = async(req,res,next) =>{
+    res.cookie("idUser",null,{
+        expires:new Date(Date.now()),
+        httpOnly: true
+    })
+    
+    res.status(200).json({
+        success: true,
+        message: "Cerro sesión"
+    })
+}

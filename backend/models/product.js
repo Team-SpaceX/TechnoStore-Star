@@ -51,7 +51,7 @@ const productoSchema=mongoose.Schema({
         maxLength:[2,"El descuento del producto no puede estar por encima de 99"],
         default:0.0
     },
-    Stock:{
+    stock:{
         type:Number,
         required:[true,"Por favor registre el stock del producto"],
         maxLength:[5,"Cantidad maxima del producto no puede sobrepasar 99999"],

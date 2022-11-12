@@ -20,7 +20,19 @@ const usuarioSchema= new mongoose.Schema({
     date: {
         type: Date,
         default: Date.now,
-    }
-})
+    },
+    cart: [{
+            product:{
+                type: mongoose.Schema.Types.ObjectId,
+                required:true,
+                ref:"Producto"
+            },
+            quantity:{
+                type: Number,
+                required:true
+            }
+        }],
+        default: {}
+},{ minimize: false })
 
 module.exports = mongoose.model("Usuario", usuarioSchema)

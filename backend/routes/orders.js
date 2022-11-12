@@ -1,10 +1,11 @@
 const express= require("express");
 const router= express.Router();
 
-const { getAllOrders, getAllOrders2, newOrder } = require("../controllers/orderController");
+const { getAllOrders, newOrder, newOrderByCart } = require("../controllers/orderController");
 
-router.route("/pedidos").get(getAllOrders)
-router.route("/pedido/nuevo").post(newOrder)
+router.route("/pedidos").get(getAllOrders)//Lista todos los pedidos
+router.route("/pedido/nuevo").post(newOrder)//Agregar un pedido con JSON
+router.route("/pedido/cart").post(newOrderByCart)//Agregar un pedido con el carrito
 
 
 module.exports=router;
