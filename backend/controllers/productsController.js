@@ -29,6 +29,25 @@ exports.getProductById= async (req, res, next)=>{
     })
 }
 
+//Ver un producto por CATEGORIA
+exports.getProductByCategory= async (req, res, next)=>{
+    const productCategory= await product.find({category: req.params.category})
+    //Validacion si existe
+    if (!productCategory){
+            return res.status(404).json({
+            success:false,
+            message: 'No existen productos con esta categoria en la base de datos'
+        })
+    }
+    //Si el objeto si existe, entonces trae el producto 
+    res.status(200).json({
+        success:true,
+        message:"Aqui debajo encuentras información sobre tu producto: ",
+        productCategory
+    })
+}
+
+
 //Crear un nuevo producto
 exports.newProduct= async(req,res,next) =>{
     const newProduct= await product.create(req.body);
