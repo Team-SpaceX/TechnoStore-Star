@@ -12,9 +12,6 @@ const productoSchema=mongoose.Schema({
         type: String,
         require:[true,"Por favor registre una descripcion para el producto"]
     },
-    attribute:[{
-        feature:{type:String}
-    }],
     category:{
         type:String,
         required:[true,"Por favor selecione la categoria del producto."],
@@ -34,12 +31,28 @@ const productoSchema=mongoose.Schema({
     },
     image:[
         {
+            public_id:{
+                type:String,
+                required:true
+            },
             url:{
                 type:String,
-                required:[true,"Por favor asigne una imagen al producto."]
+                required:true
             }
         }
     ],
+    grade:{
+        type: Number,
+        default: 0
+    },
+    numGrades:{
+        type:Number,
+        default:0
+    },
+    seller:{
+        type:String,
+        required:[true,"Por favor registre el vendedor de producto"]
+    },
     price:{
         type: Number,
         required:[true,"Por favor registre el precio del producto."],
@@ -56,6 +69,27 @@ const productoSchema=mongoose.Schema({
         required:[true,"Por favor registre el stock del producto"],
         maxLength:[5,"Cantidad maxima del producto no puede sobrepasar 99999"],
         default:0
+    },
+    reviews:[
+        {
+            nameUser:{
+                type:String,
+                required:true
+            },
+            rating:{
+                type:Number,
+                required:true
+            },
+            comment:{
+                type:String,
+                required:true
+            }
+        }
+    ],
+    user:{
+        type: mongoose.Schema.ObjectId,
+        ref: 'User',
+        required: true
     },
     dateCreate:{
         type:Date,

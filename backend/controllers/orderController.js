@@ -1,11 +1,11 @@
-const { model } = require("mongoose");
-const Order= require("../models/order");
-const User= require("../models/auth");
-const Product= require("../models/product");
+const Order=require("../models/order");
+const Product= require("../models/product")
+const catchAsyncErrors= require("../middleware/catchAsyncErrors");
+const ErrorHandler = require("../utils/errorHandler");
 
 //Crear un nuevo pedido
-exports.newOrder= async(req,res,next) =>{
-    //Debe traer inputs del Front, para llena estas constantes
+exports.newOrder= catchAsyncErrors (async (req, res, next)=>{
+   
     const {
         items,
         shippingInfo,
@@ -13,7 +13,7 @@ exports.newOrder= async(req,res,next) =>{
         priceTax,
         priceShipping,
         priceTotal,
-        user //Cambia con autenticación, por ahora asi queda..
+        payInfo
     } = req.body; 
 
     const order = await Order.create({
@@ -23,20 +23,50 @@ exports.newOrder= async(req,res,next) =>{
         priceTax,
         priceShipping,
         priceTotal,
-        user //Cambia con autenticación, por ahora asi queda..
+        payInfo,
+        datePay: Date.now(),
+        user: req.user._id
     })
 
     res.status(201).json({
         success:true,
         order
     })
-}
+})
+
+//Ver un pedido, usuario logueado
+exports.getOneOrder= catchAsyncErrors( async (req, res, next)=>{
+    //populate => Trae algunos campos de los productos referenciados
+    const order= await Order.findById(req.params.id).populate("user", "name email")
+
+    if(!order){
+        return next(new ErrorHandler("No encontramos una orden con ese Id",404))
+    }
+
+    res.status(200).json({
+        success:true,
+        order
+    })
+})
+
+//Ver mis pedidos (usuario logueado)
+exports.myOrders= catchAsyncErrors( async(req,res, next)=>{
+    const orders= await Order.find({user: req.user._id});
+
+    res.status(200).json({
+        success:true,
+        count: orders.length,
+        orders
+    })
+})
+
+//Servicios controladores sobre pedidos por parte de los ADMIN
 
 //Ver todos los pedidos
 exports.getAllOrders= async(req,res,next) =>{
-    //populate => Trae algunos campos de los productos referenciados
-    const orders= await Order.find().populate({path: "items.product",select:'_id name category price image discount stock',model: "Producto"})
-    .populate({path: "user",select:'_id name email', model: "Usuario"});
+    
+    const orders= await Order.find()
+
     //Calcula el total de ventas
     let total= 0;
     orders.forEach(order =>{
@@ -45,86 +75,53 @@ exports.getAllOrders= async(req,res,next) =>{
 
     res.status(200).json({
         success:true,
+        count: orders.length,
         total,
         orders
     })
 }
-    
-//Funcion para actualizar el stock de un producto
-    async function updateStock(id, quantity){
-    
-    const product = await Product.findById(id);
-    
-    product.stock= product.stock-quantity;
-    
-    //Verifica si hay stock disponible antes de actualizar
-    if (product.stock<0) {
-        return 'NO hay suficientes existencias'
-    }
-    else{
-        await product.save({validateBeforeSave:false})
-        return `Stock actualizado del producto id ${id}, existencias restantes ${product.stock}`
-    }
+
+//Editar un pedido (admin) 
+exports.updateOrder= catchAsyncErrors(async(req, res, next)=>{
+    const order= await Order.findById(req.params.id)
+
+    if(!order){
+        return next (new ErrorHandler("Pedido no encontrada", 404))
     }
 
-//Funcion para vaciar el carrito
-async function clearCart(id){
-    let newCart={
-        cart: []
+    if (order.state==="Enviado"){
+        return next(new ErrorHandler("Este pedido ya fue enviado", 400))
     }
-    
-    const clearCart = await User.findByIdAndUpdate(id, newCart, {
-        new: true,
-        runValidators:true,
-        useFindAndModify: false
-    })
 
-    return "Ahora el carrito esta Vacio!"
-}
+    order.state = req.body.state;
+    order.dateShip = Date.now();
 
-//Crear un nuevo pedido desde el carrito!
-exports.newOrderByCart= async(req,res,next) => {
-    
-    //Data del usuario logueado
-    const data= await User.findById(req.cookies.idUser).populate({path: "cart.product", select:'_id name category price image discount stock', model: "Producto"});
-    
-    //Inicio de variables
-    const items= data.cart
-    const shippingInfo = req.body; 
-    const user = req.cookies.idUser
-    let [priceItems, priceTax, priceShipping, priceTotal] = [0,0,0,0]
+    await order.save()
 
-    //Calculo de los precios
-    items.forEach(item =>{
-        priceItems += item.product.price*item.quantity;
-        priceTax += (item.product.price*item.quantity)* 0.19;
-        priceShipping += 2000;
-    })
-    priceShipping+=5000; //Tarifa estandar?...
-    priceTotal+= priceItems+priceTax+priceShipping;
-
-    //Crea el nnuevo pedido
-    const order = await Order.create({
-        items,
-        shippingInfo,
-        priceItems,
-        priceTax,
-        priceShipping,
-        priceTotal,
-        user 
-    })
-
-    //Actualiza el stock de los productos
-    items.forEach(item => {
-        updateStock(item.product._id.toString(),item.quantity).then(result =>{console.log(result)})
-    });
-
-    //Vacia el carrito
-    clearCart(req.cookies.idUser).then(result =>{console.log(result)});
-
-    res.status(201).json({
+    res.status(200).json({
         success:true,
-        message: '¡Compra exitosa!',
         order
     })
+})
+
+//Actualiza el stock de los productos
+async function updateStock(id, quantity){
+    const product = await Product.findById(id);
+    product.stock= product.stock-quantity;
+    await product.save({validateBeforeSave: false})
 }
+
+//Eliminar una pedido
+exports.deleteOrder = catchAsyncErrors( async (req, res, next)=>{
+    const order = await Order.findById(req.params.id);
+
+    if(!order){
+        return next (new ErrorHandler("Ese pedido no esta registrado", 404))
+    }
+    await order.remove()
+
+    res.status(200).json({
+        success:true,
+        message:"Pedido eliminado correctamente"
+    })
+})

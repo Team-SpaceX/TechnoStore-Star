@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
 
+//Diseño o modelado de la coleccion "Pedidos" en la BD
 const orderSchema= mongoose.Schema({
     shippingInfo:{
         address:{
@@ -7,6 +8,10 @@ const orderSchema= mongoose.Schema({
             required:true
         },
         city:{
+            type: String,
+            required:true
+        },
+        department:{
             type: String,
             required:true
         },
@@ -21,6 +26,18 @@ const orderSchema= mongoose.Schema({
         ref:"Usuario"
     },
     items:[{
+        name: {
+            type: String,
+            required: true
+        },
+        image: {
+            type: String,
+            required: true
+        },
+        price: {
+            type: Number,
+            required: true
+        },
         product:{
             type: mongoose.Schema.Types.ObjectId,
             required:true,
@@ -55,6 +72,20 @@ const orderSchema= mongoose.Schema({
         type:String,
         required:true,
         default:"Procesando"
+    },
+    payInfo:{
+        id:{
+            type: String,
+        },
+        state:{
+            type: String,
+        }
+    },    
+    datePay:{
+        type: Date
+    },
+    dateShip:{
+        type:Date
     },
     dateCreate:{
         type:Date,
