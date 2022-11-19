@@ -9,59 +9,61 @@ import { UPDATE_PRODUCT_RESET } from '../../constants/productConstants'
 import { useNavigate, useParams } from 'react-router-dom'
 
 export const UpdateProduct = () => {
-    const navigate= useNavigate()
-    const params= useParams();
-    const [nombre, setNombre] = useState('');
-    const [precio, setPrecio] = useState(0);
-    const [descripcion, setDescripcion] = useState('');
-    const [categoria, setCategoria] = useState('');
-    const [inventario, setInventario] = useState(0);
-    const [vendedor, setVendedor] = useState('');
-    const [imagen, setImagen] = useState([]);
-    const [imagenPreview, setImagenPreview] = useState([])
-    const [oldImagen, setOldImagen] = useState([])
+    const navigate = useNavigate()
+    const params = useParams();
+    const [name, setName] = useState('');
+    const [price, setPrice] = useState(0);
+    const [description, setDescription] = useState('');
+    const [category, setCategory] = useState('');
+    const [stock, setStock] = useState(0);
+    const [seller, setSeller] = useState('');
+    const [image, setImage] = useState([]);
+    const [imagePreview, setImagePreview] = useState([])
+    const [oldImage, setOldImage] = useState([])
 
-    const categorias = [
-        "Alimento seco",
-        "Alimento humedo",
-        "Accesorios",
-        "Cuidado e Higiene",
-        "Medicamentos",
-        "Snacks",
-        "Juguetes"
+    const categories = [
+        "Laptops & Desktops",
+        "Hard Drives, SSD & Storage",
+        "Video Graphics Cards",
+        "CPUs & Processors",
+        "Memory (RAM)",
+        "Motherboards",
+        "Power Supplies",
+        "Fans, Heatsinks & Cooling",
+        "Computer Cases"
     ]
 
     const alert = useAlert();
     const dispatch = useDispatch();
 
-    const { loading, isUpdated, error: updateError} = useSelector (state => state.product)
-    const { error, product} = useSelector ( state => state.productDetails)
-    const productId= params.id;
+    const { loading, isUpdated, error: updateError } = useSelector(state => state.product)
+    const { error, product } = useSelector(state => state.productDetails)
+    const productId = params.id;
 
     useEffect(() => {
-        if (product && product._id !==productId){
+        if (product && product._id !== productId) {
             dispatch(getProductDetails(productId));
-        }else{
-            setNombre(product.nombre);
-            setPrecio(product.precio);
-            setDescripcion(product.descripcion);
-            setCategoria(product.categoria);
-            setVendedor(product.vendedor);
-            setInventario(product.inventario);
-            setOldImagen(product.imagen)
+        } else {
+            setName(product.name);
+            setPrice(product.price);
+            setDescription(product.description);
+            setCategory(product.category);
+            setSeller(product.seller);
+            setStock(product.stock);
+            setOldImage(product.image)
         }
-        if(error){
+        if (error) {
             alert.error(error)
             dispatch(clearErrors)
         }
-        if (updateError){
+        if (updateError) {
             alert.error(error)
             dispatch(clearErrors)
         }
-        if(isUpdated){
+        if (isUpdated) {
             alert.success("Producto actualizado correctamente");
             navigate("/dashboard")
-            dispatch({ type: UPDATE_PRODUCT_RESET})
+            dispatch({ type: UPDATE_PRODUCT_RESET })
         }
 
     }, [dispatch, alert, error, isUpdated, updateError, product, productId])
@@ -70,15 +72,15 @@ export const UpdateProduct = () => {
         e.preventDefault();
 
         const formData = new FormData();
-        formData.set('nombre', nombre);
-        formData.set('precio', precio);
-        formData.set('descripcion', descripcion);
-        formData.set('categoria', categoria);
-        formData.set('inventario', inventario);
-        formData.set('vendedor', vendedor);
+        formData.set('name', name);
+        formData.set('price', price);
+        formData.set('description', description);
+        formData.set('category', category);
+        formData.set('stock', stock);
+        formData.set('seller', seller);
 
-        imagen.forEach(img => {
-            formData.append('imagen', img)
+        image.forEach(img => {
+            formData.append('image', img)
         })
 
         dispatch(updateProduct(product._id, formData))
@@ -88,17 +90,17 @@ export const UpdateProduct = () => {
 
         const files = Array.from(e.target.files)
 
-        setImagenPreview([]);
-        setImagen([])
-        setOldImagen([])
+        setImagePreview([]);
+        setImage([])
+        setOldImage([])
 
         files.forEach(file => {
             const reader = new FileReader();
 
             reader.onload = () => {
                 if (reader.readyState === 2) {
-                    setImagenPreview(oldArray => [...oldArray, reader.result])
-                    setImagen(oldArray => [...oldArray, reader.result])
+                    setImagePreview(oldArray => [...oldArray, reader.result])
+                    setImage(oldArray => [...oldArray, reader.result])
                 }
             }
 
@@ -106,128 +108,128 @@ export const UpdateProduct = () => {
         })
     }
 
-  return (
-    <Fragment>
-    <MetaData title={'Actualizar producto'} />
-    <div className="row">
-        <div className="col-12 col-md-2">
-            <Sidebar />
-        </div>
-
-        <div className="col-12 col-md-10">
-            <Fragment>
-                <div className="wrapper my-5">
-                    <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
-                        <h1 className="mb-4">Actualizar Producto</h1>
-
-                        <div className="form-group">
-                            <label htmlFor="name_field">Nombre</label>
-                            <input
-                                type="text"
-                                id="name_field"
-                                className="form-control"
-                                value={nombre}
-                                onChange={(e) => setNombre(e.target.value)}
-                            />
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="price_field">Precio</label>
-                            <input
-                                type="text"
-                                id="price_field"
-                                className="form-control"
-                                value={precio}
-                                onChange={(e) => setPrecio(e.target.value)}
-                            />
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="description_field">Descripcion</label>
-                            <textarea className="form-control" 
-                            id="description_field" 
-                            rows="8" 
-                            value={descripcion} 
-                            onChange={(e) => setDescripcion(e.target.value)}></textarea>
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="category_field">Categoria</label>
-                            <select className="form-control" 
-                            id="category_field" 
-                            value={categoria} 
-                            onChange={(e) => setCategoria(e.target.value)}>
-                                {categorias.map(categoria => (
-                                    <option key={categoria} value={categoria} >{categoria}</option>
-                                ))}
-
-                            </select>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="stock_field">Inventario</label>
-                            <input
-                                type="number"
-                                id="stock_field"
-                                className="form-control"
-                                value={inventario}
-                                onChange={(e) => setInventario(e.target.value)}
-                            />
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="seller_field">Vendedor</label>
-                            <input
-                                type="text"
-                                id="seller_field"
-                                className="form-control"
-                                value={vendedor}
-                                onChange={(e) => setVendedor(e.target.value)}
-                            />
-                        </div>
-
-                        <div className='form-group'>
-                            <label>Imágenes</label>
-
-                            <div className='custom-file'>
-                                <input
-                                    type='file'
-                                    name='product_images'
-                                    className='custom-file-input'
-                                    id='customFile'
-                                    onChange={onChange}
-                                    multiple
-                                />
-                                <label className='custom-file-label' htmlFor='customFile'>
-                                    Seleccione Imágenes
-                         </label>
-                            </div>
-
-                            {oldImagen && oldImagen.map(img => (
-                                <img key={img} src={img.url} alt={img.url} className="mt-3 mr-2" width="55" height="52" />
-                            ))}
-
-                            {imagenPreview.map(img => (
-                                <img src={img} key={img} alt="Vista Previa" className="mt-3 mr-2" width="55" height="52" />
-                            ))}
-
-                        </div>
-
-
-                        <button
-                            id="login_button"
-                            type="submit"
-                            className="btn btn-block py-3"
-                            disabled={loading ? true : false}
-                        >
-                            ACTUALIZAR
-                    </button>
-
-                    </form>
+    return (
+        <Fragment>
+            <MetaData title={'Actualizar producto'} />
+            <div className="row">
+                <div className="col-12 col-md-2">
+                    <Sidebar />
                 </div>
-            </Fragment>
-        </div>
-    </div>
 
-</Fragment>
-  )
+                <div className="col-12 col-md-10">
+                    <Fragment>
+                        <div className="wrapper my-5">
+                            <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
+                                <h1 className="mb-4">Actualizar Producto</h1>
+
+                                <div className="form-group">
+                                    <label htmlFor="name_field">Nombre</label>
+                                    <input
+                                        type="text"
+                                        id="name_field"
+                                        className="form-control"
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
+                                    />
+                                </div>
+
+                                <div className="form-group">
+                                    <label htmlFor="price_field">Precio</label>
+                                    <input
+                                        type="text"
+                                        id="price_field"
+                                        className="form-control"
+                                        value={price}
+                                        onChange={(e) => setPrice(e.target.value)}
+                                    />
+                                </div>
+
+                                <div className="form-group">
+                                    <label htmlFor="description_field">Descripción</label>
+                                    <textarea className="form-control"
+                                        id="description_field"
+                                        rows="8"
+                                        value={description}
+                                        onChange={(e) => setDescription(e.target.value)}></textarea>
+                                </div>
+
+                                <div className="form-group">
+                                    <label htmlFor="category_field">Categoria</label>
+                                    <select className="form-control"
+                                        id="category_field"
+                                        value={category}
+                                        onChange={(e) => setCategory(e.target.value)}>
+                                        {categories.map(category => (
+                                            <option key={category} value={category} >{category}</option>
+                                        ))}
+
+                                    </select>
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="stock_field">Inventario</label>
+                                    <input
+                                        type="number"
+                                        id="stock_field"
+                                        className="form-control"
+                                        value={stock}
+                                        onChange={(e) => setStock(e.target.value)}
+                                    />
+                                </div>
+
+                                <div className="form-group">
+                                    <label htmlFor="seller_field">Vendedor</label>
+                                    <input
+                                        type="text"
+                                        id="seller_field"
+                                        className="form-control"
+                                        value={seller}
+                                        onChange={(e) => setSeller(e.target.value)}
+                                    />
+                                </div>
+
+                                <div className='form-group'>
+                                    <label>Imágenes</label>
+
+                                    <div className='custom-file'>
+                                        <input
+                                            type='file'
+                                            name='product_images'
+                                            className='custom-file-input'
+                                            id='customFile'
+                                            onChange={onChange}
+                                            multiple
+                                        />
+                                        <label className='custom-file-label' htmlFor='customFile'>
+                                            Seleccione Imágenes
+                                        </label>
+                                    </div>
+
+                                    {oldImage && oldImage.map(img => (
+                                        <img key={img} src={img.url} alt={img.url} className="mt-3 mr-2" width="55" height="52" />
+                                    ))}
+
+                                    {imagePreview.map(img => (
+                                        <img src={img} key={img} alt="Vista Previa" className="mt-3 mr-2" width="55" height="52" />
+                                    ))}
+
+                                </div>
+
+
+                                <button
+                                    id="login_button"
+                                    type="submit"
+                                    className="btn btn-block py-3"
+                                    disabled={loading ? true : false}
+                                >
+                                    ACTUALIZAR
+                                </button>
+
+                            </form>
+                        </div>
+                    </Fragment>
+                </div>
+            </div>
+
+        </Fragment>
+    )
 }

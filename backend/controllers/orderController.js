@@ -89,9 +89,16 @@ exports.updateOrder= catchAsyncErrors(async(req, res, next)=>{
         return next (new ErrorHandler("Pedido no encontrada", 404))
     }
 
-    if (order.state==="Enviado"){
-        return next(new ErrorHandler("Este pedido ya fue enviado", 400))
+    if (order.state==="Enviado" && req.body.state==="Enviado"){
+        return next(new ErrorHandler("Esta orden ya fue enviada", 400))
     }
+
+        //Restamos del inventario
+        if (req.body.state!=="Procesando"){
+            order.items.forEach(async item => {
+                await updateStock(item.product, item.quantity)
+            })
+        }
 
     order.state = req.body.state;
     order.dateShip = Date.now();

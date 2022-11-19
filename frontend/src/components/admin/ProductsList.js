@@ -7,7 +7,7 @@ import Sidebar from './Sidebar'
 
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
-import {  clearErrors, deleteProduct, getAdminProducts } from '../../actions/productActions'
+import { clearErrors, deleteProduct, getAdminProducts } from '../../actions/productActions'
 
 const ProductsList = () => {
 
@@ -17,10 +17,10 @@ const ProductsList = () => {
     const { loading, error, products } = useSelector(state => state.products);
     
     const deleteProductHandler= (id)=> {
-        const response=window.confirm("Esta seguro de querer borrar este producto?")
+        const response=window.confirm("¿Esta seguro de quierer borrar este producto?")
         if (response){
             dispatch(deleteProduct(id))
-            alert.success("Producto eliminado correctamente")
+            alert.success("¡Producto eliminado correctamente!")
             window.location.reload(false)
         }
     }
@@ -38,48 +38,56 @@ const ProductsList = () => {
         const data = {
             columns: [
                 {
-                    label: 'Nombre',
-                    field: 'nombre',
+                    label: 'Nombre de Producto',
+                    field: 'name',
                     sort: 'asc'
                 },
                 {
                     label: 'Precio',
-                    field: 'precio',
+                    field: 'price',
                     sort: 'asc'
                 },
                 {
-                    label: 'Inventario',
-                    field: 'inventario',
+                    label: 'Stock',
+                    field: 'stock',
                     sort: 'asc'
                 },
                 {
                     label: 'Vendedor',
-                    field: 'vendedor',
+                    field: 'seller',
                     sort: 'asc'
                 },
                 {
                     label: 'Acciones',
-                    field: 'acciones',
+                    field: 'actions',
                 },
             ],
             rows: []
         }
         products.forEach(product => {
             data.rows.push({
-                nombre: product.nombre,
-                precio: `$${product.precio}`,
-                inventario: product.inventario,
-                vendedor: product.vendedor,
-                acciones: <Fragment>
-                    <Link to={`/producto/${product._id}`} className="btn btn-primary py-1 px-2">
+                name: product.name,
+                price: `$${product.price}`,
+                stock: product.stock,
+                seller: product.seller,
+                actions: <Fragment>
+                    <div className='row'>
+                    <div className='col'>
+                    <Link to={`/product/${product._id}`} className="btn btn-primary">
                         <i className="fa fa-eye"></i>
-                    </Link><Link to={`/updateProduct/${product._id}`} className="btn btn-warning py-1 px-2">
+                    </Link>
+                    </div>
+                    <div className='col'>
+                    <Link to={`/updateProduct/${product._id}`} className="btn btn-warning">
                     <i class="fa fa-pencil"></i>
                     </Link>
-
-                    <button className="btn btn-danger py-1 px-2 ml-2" onClick={() => deleteProductHandler(product._id)}>
+                    </div>
+                    <div className='col'>
+                    <button className="btn btn-danger" onClick={() => deleteProductHandler(product._id)}>
                         <i className="fa fa-trash"></i>
                     </button>
+                    </div>
+                    </div>
                 </Fragment>
             })
         })

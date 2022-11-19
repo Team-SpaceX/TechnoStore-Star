@@ -21,19 +21,20 @@ const Header = () => {
     return (
         <Fragment>
             <nav className='navbar row'>
-                <div className='col-12 col-md-3'>
+                <div className='col-2'>
                     <div className='navbar-brand'>
-                        <Link to="/" ><img src="../img/Logo-Tecnostore.svg" alt="TecnoStore-Logo"></img></Link>
+                        <Link to="/" ><img src="../img/Logo-Tecnostore.svg" alt="TechnoStore-Logo"></img></Link>
                     </div>
                 </div>
 
-                <div className='col-12 col-md-5 mt-2 mt-md-0'>
+                <div className='col-4'>
                     {/*Aqui va buscar*/}
                     <Search />
                 </div>
+                <div className='col-2'></div>
                 {/*Boton inicio sesión*/}
-                <div className="col-12 col-md-4 mt-4 mt-md-0 text-center">
-                    <Link to="/carrito"><i class="fa fa-shopping-cart fa-2x text-white" aria-hidden="false"></i>
+                <div className="col text-center">
+                    <Link to="/cart"><i class="fa fa-shopping-cart fa-2x text-white" aria-hidden="false"></i>
                         <span className="ml-1" id="cart_count">{cartItems.length}</span></Link>
 
                     {user ? (
@@ -55,7 +56,7 @@ const Header = () => {
                                 )}
 
                                 <Link className="dropdown-item" to="/myOrders">Pedidos</Link>
-                                <Link className="dropdown-item" to="/yo">Mi Perfil</Link>
+                                <Link className="dropdown-item" to="/me">Mi Perfil</Link>
                                 <Link className="dropdown-item" to="/" onClick={logoutHandler}>Cerrar Sesión</Link>
                             </div>
                         </div>
@@ -65,6 +66,7 @@ const Header = () => {
                 </div>
 
             </nav>
+            <div id='nav-hr'></div>
 
         </Fragment>
     )

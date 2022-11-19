@@ -26,29 +26,29 @@ export const Payment = () => {
 
     cartItems.forEach(elem =>{
         items.push({
-            nombre: elem.nombre,
-            cantidad: elem.quantity,
-            imagen: elem.imagen,
-            precio: elem.precio,
-            producto: elem.product
+            name: elem.name,
+            quantity: elem.quantity,
+            image: elem.image,
+            price: elem.price,
+            product: elem.product
         })
     })
 
     const order={
         items,
-        envioInfo: shippingInfo
+        shippingInfo: shippingInfo
     }
 
     const orderInfo= JSON.parse(sessionStorage.getItem("orderInfo"));
 
     if (orderInfo){
-        order.precioItems= orderInfo.precioItems
-        order.precioEnvio=orderInfo.precioEnvio
-        order.precioImpuesto= orderInfo.precioImpuesto
-        order.precioTotal= orderInfo.precioTotal
-        order.pagoInfo={
+        order.priceItems= orderInfo.priceItems
+        order.priceShipping=orderInfo.priceShipping
+        order.priceTax= orderInfo.priceTax
+        order.priceTotal= orderInfo.priceTotal
+        order.payInfo={
             id:id,
-            estado:"Aceptado"
+            state:"Aceptado"
         }
     }
 
@@ -108,7 +108,7 @@ export const Payment = () => {
                             type="submit"
                             className="btn btn-block py-3"
                         >
-                            Pagar ${` - ${orderInfo && orderInfo.precioTotal}`}
+                            Pagar ${` - ${orderInfo && orderInfo.priceTotal}`}
                         </button>
 
                     </form>

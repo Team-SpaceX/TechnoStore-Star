@@ -59,15 +59,15 @@ export const ListOrder = () => {
 
 
         orders.forEach(order => {
-            var fecha = new Date(order.fechaCreacion).toLocaleDateString()
+            var fecha = new Date(order.dateCreate).toLocaleDateString()
             data.rows.push({
                 fecha: fecha,
                 id: order._id,
                 cantidadItems: order.items.length,
-                costo: `$${order.precioTotal}`,
-                estado: order.estado && String(order.estado).includes("Entregado")
-                    ? <p style={{ color: "green" }}>{order.estado}</p>
-                    : <p style={{ color: "red" }}>{order.estado}</p>,
+                costo: `$${order.priceTotal}`,
+                estado: order.state && String(order.state).includes("Entregado")
+                    ? <p style={{ color: "green" }}>{order.state}</p>
+                    : <p style={{ color: "orange" }}>{order.state}</p>,
                 acciones:
                     <Link to={`/order/${order._id}`} className="btn btn-primary">
                         <i className='fa fa-eye'></i></Link>

@@ -11,23 +11,25 @@ import { useNavigate } from 'react-router-dom'
 
 const NewProduct = () => {
     const navigate= useNavigate()
-    const [nombre, setNombre] = useState('');
-    const [precio, setPrecio] = useState(0);
-    const [descripcion, setDescripcion] = useState('');
-    const [categoria, setCategoria] = useState('');
-    const [inventario, setInventario] = useState(0);
-    const [vendedor, setVendedor] = useState('');
-    const [imagen, setImagen] = useState([]);
-    const [imagenPreview, setImagenPreview] = useState([])
+    const [name, setName] = useState('');
+    const [price, setPrice] = useState(0);
+    const [description, setDescription] = useState('');
+    const [category, setCategory] = useState('');
+    const [stock, setStock] = useState(0);
+    const [seller, setSeller] = useState('');
+    const [image, setImage] = useState([]);
+    const [imagePreview, setImagePreview] = useState([])
 
-    const categorias = [
-        "Alimento seco",
-        "Alimento humedo",
-        "Accesorios",
-        "Cuidado e Higiene",
-        "Medicamentos",
-        "Snacks",
-        "Juguetes"
+    const categories = [
+        "Laptops & Desktops",
+        "Hard Drives, SSD & Storage",
+        "Video Graphics Cards",
+        "CPUs & Processors",
+        "Memory (RAM)",
+        "Motherboards",
+        "Power Supplies",
+        "Fans, Heatsinks & Cooling",
+        "Computer Cases"
     ]
 
     const alert = useAlert();
@@ -54,15 +56,15 @@ const NewProduct = () => {
         e.preventDefault();
 
         const formData = new FormData();
-        formData.set('nombre', nombre);
-        formData.set('precio', precio);
-        formData.set('descripcion', descripcion);
-        formData.set('categoria', categoria);
-        formData.set('inventario', inventario);
-        formData.set('vendedor', vendedor);
+        formData.set('name', name);
+        formData.set('price', price);
+        formData.set('description', description);
+        formData.set('category', category);
+        formData.set('stock', stock);
+        formData.set('seller', seller);
 
-        imagen.forEach(img => {
-            formData.append('imagen', img)
+        image.forEach(img => {
+            formData.append('image', img)
         })
 
         dispatch(newProduct(formData))
@@ -72,16 +74,16 @@ const NewProduct = () => {
 
         const files = Array.from(e.target.files)
 
-        setImagenPreview([]);
-        setImagen([])
+        setImagePreview([]);
+        setImage([])
 
         files.forEach(file => {
             const reader = new FileReader();
 
             reader.onload = () => {
                 if (reader.readyState === 2) {
-                    setImagenPreview(oldArray => [...oldArray, reader.result])
-                    setImagen(oldArray => [...oldArray, reader.result])
+                    setImagePreview(oldArray => [...oldArray, reader.result])
+                    setImage(oldArray => [...oldArray, reader.result])
                 }
             }
 
@@ -110,8 +112,8 @@ const NewProduct = () => {
                                         type="text"
                                         id="name_field"
                                         className="form-control"
-                                        value={nombre}
-                                        onChange={(e) => setNombre(e.target.value)}
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
                                     />
                                 </div>
 
@@ -121,8 +123,8 @@ const NewProduct = () => {
                                         type="text"
                                         id="price_field"
                                         className="form-control"
-                                        value={precio}
-                                        onChange={(e) => setPrecio(e.target.value)}
+                                        value={price}
+                                        onChange={(e) => setPrice(e.target.value)}
                                     />
                                 </div>
 
@@ -131,17 +133,17 @@ const NewProduct = () => {
                                     <textarea className="form-control" 
                                     id="description_field" 
                                     rows="8" 
-                                    value={descripcion} 
-                                    onChange={(e) => setDescripcion(e.target.value)}></textarea>
+                                    value={description} 
+                                    onChange={(e) => setDescription(e.target.value)}></textarea>
                                 </div>
 
                                 <div className="form-group">
                                     <label htmlFor="category_field">Categoria</label>
                                     <select className="form-control" 
                                     id="category_field" 
-                                    value={categoria} onChange={(e) => setCategoria(e.target.value)}>
-                                        {categorias.map(categoria => (
-                                            <option key={categoria} value={categoria} >{categoria}</option>
+                                    value={category} onChange={(e) => setCategory(e.target.value)}>
+                                        {categories.map(category => (
+                                            <option key={category} value={category} >{category}</option>
                                         ))}
 
                                     </select>
@@ -152,8 +154,8 @@ const NewProduct = () => {
                                         type="number"
                                         id="stock_field"
                                         className="form-control"
-                                        value={inventario}
-                                        onChange={(e) => setInventario(e.target.value)}
+                                        value={stock}
+                                        onChange={(e) => setStock(e.target.value)}
                                     />
                                 </div>
 
@@ -163,8 +165,8 @@ const NewProduct = () => {
                                         type="text"
                                         id="seller_field"
                                         className="form-control"
-                                        value={vendedor}
-                                        onChange={(e) => setVendedor(e.target.value)}
+                                        value={seller}
+                                        onChange={(e) => setSeller(e.target.value)}
                                     />
                                 </div>
 
@@ -185,7 +187,7 @@ const NewProduct = () => {
                                         </label>
                                     </div>
 
-                                    {imagenPreview.map(img => (
+                                    {imagePreview.map(img => (
                                         <img src={img} key={img} alt="Images Preview" className="mt-3 mr-2" width="55" height="52" />
                                     ))}
 
@@ -198,7 +200,7 @@ const NewProduct = () => {
                                     className="btn btn-block py-3"
                                     disabled={loading ? true : false}
                                 >
-                                    CREATE
+                                    Publicar
                                 </button>
 
                             </form>

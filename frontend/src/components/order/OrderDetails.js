@@ -11,7 +11,7 @@ export const OrderDetails = () => {
     const alert= useAlert();
     const dispatch= useDispatch();
     const {loading, error, order={}}= useSelector(state=> state.orderDetails)
-    const { envioInfo, items, pagoInfo, user, precioTotal, estado} = order
+    const { shippingInfo, items, payInfo, user, priceTotal, state} = order
 
     useEffect(()=>{
         dispatch(getOrderDetails(params.id));
@@ -20,9 +20,9 @@ export const OrderDetails = () => {
             dispatch(clearErrors)
         }
     },[dispatch, alert, error, params.id])
-    const detalleEnvio= envioInfo && `${envioInfo.direccion}, ${envioInfo.ciudad}, ${envioInfo.departament}`
+    const detailsShip= shippingInfo && `${shippingInfo.direccion}, ${shippingInfo.ciudad}, ${shippingInfo.departament}`
 
-    const esPago= pagoInfo && pagoInfo.estado==="Aceptado" ? true : false
+    const isPaid= payInfo && payInfo.state==="Aceptado" ? true : false
 
   return (
     <Fragment>
@@ -37,17 +37,17 @@ export const OrderDetails = () => {
 
                             <h4 className="mb-4">Datos de envio</h4>
                             <p><b>Nombre:</b> {user && user.name}</p>
-                            <p><b>Telefono:</b> {envioInfo && envioInfo.telefono}</p>
-                            <p className="mb-4"><b>Dirección:</b>{detalleEnvio}</p>
-                            <p><b>Pago Total:</b> ${precioTotal}</p>
+                            <p><b>Telefono:</b> {shippingInfo && shippingInfo.phone}</p>
+                            <p className="mb-4"><b>Dirección:</b>{detailsShip}</p>
+                            <p><b>Pago Total:</b> ${priceTotal}</p>
 
                             <hr />
 
                             <h4 className="my-4">Pago</h4>
-                            <p className={esPago ? "greenColor" : "redColor"}><b>{esPago ? "Pago Completado" : "Pendiente de pago"}</b></p>
+                            <p className={isPaid ? "greenColor" : "redColor"}><b>{isPaid ? "Pago Completado" : "Pendiente de pago"}</b></p>
 
                             <h4 className="my-4">Estado del pedido:</h4>
-                            <p className={order.estado && String(order.estado).includes('Entregado') ? "greenColor" : "redColor"} ><b>{estado}</b></p>
+                            <p className={order.state && String(order.state).includes('Entregado') ? "greenColor" : "redColor"} ><b>{state}</b></p>
 
                             <h4 className="my-4">Productos Comprados:</h4>
 
@@ -56,19 +56,19 @@ export const OrderDetails = () => {
                                 {items && items.map(item => (
                                     <div key={item.product} className="row my-5">
                                         <div className="col-4 col-lg-2">
-                                            <img src={item.imagen} alt={item.nombre} height="45" width="65" />
+                                            <img src={item.image} alt={item.name} height="45" width="65" />
                                         </div>
 
                                         <div className="col-5 col-lg-5">
-                                            <Link to={`/producto/${item.product}`}>{item.nombre}</Link>
+                                            <Link to={`/product/${item.product}`}>{item.name}</Link>
                                         </div>
 
                                         <div className="col-4 col-lg-2 mt-4 mt-lg-0">
-                                            <p>${item.precio}</p>
+                                            <p>${item.price}</p>
                                         </div>
 
                                         <div className="col-4 col-lg-3 mt-4 mt-lg-0">
-                                            <p>{item.cantidad} Unidad(es)</p>
+                                            <p>{item.quantity} Unidad(es)</p>
                                         </div>
                                     </div>
                                 ))}

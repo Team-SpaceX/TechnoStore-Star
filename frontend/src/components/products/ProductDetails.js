@@ -132,23 +132,26 @@ export const ProductDetails = () => {
 
             <div className='col-12 col-lg-5 mt-5'>
               <h3>{product.name}</h3>
-              <p id="product_id">ID del Producto {product._id}</p>
+              <p id="product_id">ID-{product._id}</p>
               <hr />
 
               <div className='rating-outer'>
-                <div className="rating-inner" style={{ width: `${(product.rating / 5) * 100}%` }}></div>
+                <div className="rating-inner" style={{ width: `${(product.grade / 5) * 100}%` }}></div>
               </div>
-              <span id="No_de_reviews">  ({product.numRating} Reviews)</span>
+              <span id="No_de_reviews">  ({product.numGrades} Reviews)</span>
               <hr />
               <p id="precio_producto">${product.price}</p>
+              {product.stock === 0 ? "":
               <div className="stockCounter d-inline">
                 <span className="btn btn-danger minus" onClick={decreaseQty}>-</span>
                 <input type="number" className="form-control count d-inline" value={quantity} readOnly />
                 <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
-              </div>
-              <button type="button" id="cart_btn" className="btn btn-primary d-inline ml-4" disabled={product.inventario === 0} onClick={addToCart}>Agregar al Carrito</button>
+              <button type="button" id="cart_btn" className="btn btn-primary d-inline ml-4" disabled={product.stock === 0} onClick={addToCart}>Agregar al Carrito</button>
+              </div>}
               <hr />
-              <p>Estado: <span id="stock_stado" className={product.stock > 0 ? 'greenColor' : 'redColor'}>{product.inventario > 0 ? "En existencia" : "Agotado"}</span></p>
+              <p>Estado: <span id="stock_stado" className={product.stock > 0 ? 'greenColor' : 'redColor'}>{product.stock > 0 ? "En existencia" : "Agotado"}</span></p>
+              <hr />
+              <p id="categoria">Categoria: <strong>{product.categoria}</strong></p>
               <hr />
               <h4 className="mt-2">Descripción:</h4>
               <p>{product.description}</p>
@@ -203,8 +206,8 @@ export const ProductDetails = () => {
               </div>
             </div>
           </div>
-          {product.options && product.options.length > 0 && (
-                        <ListReviews options={product.options} />
+          {product.reviews && product.reviews.length > 0 && (
+                        <ListReviews reviews={product.reviews} />
                     )}
         </Fragment>
       )}

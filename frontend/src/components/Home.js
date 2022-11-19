@@ -33,12 +33,15 @@ export const Home = () => {
         <Fragment>
             {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
                 <Fragment>
-                    <MetaData title="Lo mejor para tu compañero"></MetaData>
-                    <h1 id="encabezado_productos">Ultimos Productos</h1>
+                    <MetaData title="Mantente a la vanguardia"></MetaData>
+                    <br/>
+                    <div className='row'>
+                        <div className='col'>
+                        <h2 id="encabezado_productos">Productos por rango de precio:</h2>
 
-                    <section id="productos" className='container mt-5'>
-                        <div className='row'>
-                            <Slider
+                        </div>
+                        <div className='col'>
+                        <Slider
                                 range
                                 className='t-slider'
                                 marks={{
@@ -57,10 +60,15 @@ export const Home = () => {
                                 value={price}
                                 onChange={price => setPrice(price)}
                             ></Slider>
-
+                        </div>
+                    </div>
+                    
+                    <section id="productos" className='container mt-5'>
+                        <div className='row'>
+                            
                             {products && products.map(product => (
                                 <div key={product._id} className='col-sm-12 col-md-6 col-lg-3 my-3'>
-                                    <div className='card p-3 rounded'>
+                                    <div className='card p-3 rounded text-center'>
                                         <img className='card-img-top mx-auto' src={product.image[0].url} alt={product.image[0].public_id}></img>
                                         <div className='card-body d-flex flex-column'>
                                             <h5 id="titulo_producto"><Link to={`/product/${product._id}`}>{product.name}</Link></h5>
@@ -70,7 +78,8 @@ export const Home = () => {
                                                 </div>
                                                 <span id="No_de_opiniones"> {product.numGrades} Reviews</span>
                                             </div>
-                                            <p className='card-text'>${product.price}</p><Link to={`/product/${product._id}`} id="view_btn" className='btn btn-block'>
+                                            <p className='card-text'>${product.price}</p>
+                                            <Link to={`/product/${product._id}`} id="view_btn" className='btn btn-block'>
                                                 Ver detalle
                                             </Link>
                                         </div>
@@ -89,8 +98,8 @@ export const Home = () => {
                             onChange={setCurrentPageNo}
                             nextPageText={'>'}
                             prevPageText={'<'}
-                            firstPageText={'>>'}
-                            lastPageText={'<<'}
+                            firstPageText={'<<'}
+                            lastPageText={'>>'}
                             itemClass='page-item'
                             linkClass='page-link'
                         />

@@ -10,7 +10,7 @@ exports.getProducts= catchAsyncErrors(async (req,res,next) =>{
     const productsCount = await Product.countDocuments();
     
     //Trae todos los productos de la coleccion y segun el filtro
-    const apiFeatures = new APIFeatures(Product.find(), req.query)
+    const apiFeatures = new APIFeatures(Product.find({ stock: { $gt: 0 } }), req.query)
         .search()
         .filter();
 
@@ -31,17 +31,17 @@ exports.getProducts= catchAsyncErrors(async (req,res,next) =>{
 
 //Ver un producto por ID
 exports.getProductById= catchAsyncErrors(async (req, res, next) => {
-    const productId= await Product.findById(req.params.id)
+    const product= await Product.findById(req.params.id)
     
     //Validacion si existe
-    if (!productId){
+    if (!product){
         return next(new ErrorHandler("Producto no encontrado", 404))
     }
     //Si el objeto si existe, entonces trae el producto 
     res.status(200).json({
         success:true,
         message:"Aqui debajo encuentras información sobre tu producto: ",
-        productId
+        product
     })
 })
 
@@ -109,23 +109,23 @@ exports.updateProduct=  catchAsyncErrors(async (req,res,next) =>{
     }
 
     //Actualizacion de las imagenes
-    let imagen=[]
+    let image=[]
 
     if (typeof req.body.image==="string"){
-        imagen.push(req.body.image)
+        image.push(req.body.image)
     }else{
-        imagen=req.body.image
+        image=req.body.image
     }
 
-    if (imagen!== undefined){
+    if (image!== undefined){
         //Eliminar las imagenes viejas asociadas al producto
         for (let i=0; i<productUpdate.image.length; i++){
-            const result= await cloudinary.v2.uploader.destroy(Product.image[i].public_id)
+            const result= await cloudinary.v2.uploader.destroy(productUpdate.image[i].public_id)
         }
         //Guarda las nuevas imagenes con Cloudinary
         let imageLinks=[]
-        for (let i=0; i<imagen.length; i++){
-            const result=await cloudinary.v2.uploader.upload(imagen[i],{
+        for (let i=0; i<image.length; i++){
+            const result=await cloudinary.v2.uploader.upload(image[i],{
                 folder:"products"
             });
             imageLinks.push({
@@ -180,20 +180,6 @@ exports.getAdminProducts = catchAsyncErrors(async (req, res, next) => {
 /*=====================
 RUTAS PARA LOS CLIENTES
 =====================*/
-
-//Listar productos con stock > 0
-exports.getProductsInStock=async (req,res,next) =>{
-    const products= await product.find();
-    const filterProducts = products.filter(function(element){
-        return element.stock > 0;
-      });
-    //Trae todos los productos de la coleccion y su cantidad
-    res.status(200).json({
-        success:true,
-        count: filterProducts.length,
-        filterProducts
-    })
-}
 
 //Crear o actualizar una review
 exports.createProductReview = catchAsyncErrors(async (req, res, next) => {

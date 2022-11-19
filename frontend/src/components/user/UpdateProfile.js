@@ -9,7 +9,7 @@ import { UPDATE_PROFILE_RESET } from '../../constants/userConstants'
 
 export const UpdateProfile = () => {
     const navigate = useNavigate();
-    const [nombre, setNombre] = useState("")
+    const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [avatar, setAvatar] = useState("");
     const [avatarPreview, setAvatarPreview] = useState("")
@@ -21,7 +21,7 @@ export const UpdateProfile = () => {
 
     useEffect(() => {
         if (user) {
-            setNombre(user.nombre);
+            setName(user.name);
             setEmail(user.email);
             setAvatarPreview(user.avatar.url)
         }
@@ -34,7 +34,7 @@ export const UpdateProfile = () => {
             alert.success("Perfil actualizado correctamente")
             dispatch(loadUser());
 
-            navigate("/yo")
+            navigate("/me")
 
             dispatch({
                 type: UPDATE_PROFILE_RESET
@@ -46,7 +46,7 @@ export const UpdateProfile = () => {
         e.preventDefault();
 
         const formData = new FormData();
-        formData.set("nombre", nombre);
+        formData.set("name", name);
         formData.set("email", email);
         formData.set("avatar", avatar)
 
@@ -68,7 +68,7 @@ export const UpdateProfile = () => {
 
     return (
         <Fragment>
-            <MetaData title={'ACTUALIZAR PERFIL'} />
+            <MetaData title={'Actualizar perfil'} />
 
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
@@ -81,9 +81,9 @@ export const UpdateProfile = () => {
                                 type="name"
                                 id="name_field"
                                 className="form-control"
-                                name='nombre'
-                                value={nombre}
-                                onChange={(e) => setNombre(e.target.value)}
+                                name='name'
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
                             />
                         </div>
 

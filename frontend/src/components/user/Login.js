@@ -54,12 +54,12 @@ export const Login = () => {
                                     ></input>
                                 </div>
 
-                                <Link to="/password/forgot" className='float-right mb-4'>Olvidó su contraseña?</Link>
+                                <Link to="/password/forgot" className='float-right mb-4'>¿Olvidó su contraseña?</Link>
 
                                 {/*Boton iniciar sesiòn*/}
                                 <button id="login_button" type="submit" className='btn btn-block py-3'>LOGIN</button>
 
-                                <Link to="/register" className='float-right mt-3'>Usuario nuevo? Registrese aquí</Link>
+                                <Link to="/register" className='float-right mt-3'>¿Usuario nuevo? Registrese aquí</Link>
 
                             </form>
                         </div>

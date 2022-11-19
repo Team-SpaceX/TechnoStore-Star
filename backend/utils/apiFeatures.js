@@ -6,7 +6,7 @@ class APIFeatures{
 
 search(){
     const keyword= this.queryStr.keyword ? {
-        nombre:{
+        name:{
             $regex:this.queryStr.keyword,
             $options:'i'
         }

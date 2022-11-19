@@ -23,7 +23,7 @@ export const UpdatePassword = () => {
 
         if (isUpdated){
             alert.success("Contraseña Actualizada Correctamente")
-            navigate("/yo")
+            navigate("/me")
 
             dispatch({
                 type: UPDATE_PASSWORD_RESET

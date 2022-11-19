@@ -11,16 +11,16 @@ export const Shipping = () => {
     const navigate= useNavigate()
     const { shippingInfo } = useSelector(state => state.cart)
 
-    const [direccion, setDireccion] = useState(shippingInfo.direccion)
-    const [ciudad, setCiudad] = useState(shippingInfo.ciudad)
-    const [telefono, setTelefono] = useState(shippingInfo.telefono)
-    const [departamento, setDepartamento] = useState(shippingInfo.departamento)
-    const [ciudades, setCiudades]= useState([])
+    const [address, setAddress] = useState(shippingInfo.address)
+    const [city, setCity] = useState(shippingInfo.city)
+    const [phone, setPhone] = useState(shippingInfo.phone)
+    const [department, setDepartment] = useState(shippingInfo.department)
+    const [cities, setCities]= useState([])
 
     useEffect(()=>{
       Pais.forEach((depar)=>{
-        if (depar.departamento===departamento){
-            setCiudades(depar.ciudades)
+        if (depar.departamento===department){
+            setCities(depar.ciudades)
         }
       })
     })
@@ -28,7 +28,7 @@ export const Shipping = () => {
 
     const submitHandler= (e)=>{
         e.preventDefault()
-        dispatch(saveShippingInfo({direccion, ciudad, telefono, departamento}))
+        dispatch(saveShippingInfo({address, city, phone, department}))
         navigate("/order/confirm")
     }
 
@@ -41,7 +41,7 @@ export const Shipping = () => {
             <CheckoutSteps shipping />
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
-                    <form className="shadow-lg" onClick={submitHandler}>
+                    <form className="shadow-lg" onSubmit={submitHandler}>
                         <h1 className="mb-4">Información de envio</h1>
                         <div className="form-group">
                             <label htmlFor="address_field">Dirección</label>
@@ -49,8 +49,8 @@ export const Shipping = () => {
                                 type="text"
                                 id="address_field"
                                 className="form-control"
-                                value={direccion}
-                                onChange={(e) => setDireccion(e.target.value)}
+                                value={address}
+                                onChange={(e) => setAddress(e.target.value)}
                                 required
                             />
                         </div>
@@ -61,8 +61,8 @@ export const Shipping = () => {
                                 type="phone"
                                 id="phone_field"
                                 className="form-control"
-                                value={telefono}
-                                onChange={(e) => setTelefono(e.target.value)}
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
                                 required
                             />
                         </div>
@@ -72,8 +72,8 @@ export const Shipping = () => {
                             <select
                                 id="country_field"
                                 className="form-control"
-                                value={departamento}
-                                onChange={(e) => setDepartamento(e.target.value)}
+                                value={department}
+                                onChange={(e) => setDepartment(e.target.value)}
                                 required
                             >
 
@@ -91,11 +91,11 @@ export const Shipping = () => {
                                 <select
                                     id="city_field"
                                     className="form-control"
-                                    value={ciudad}
-                                    onChange={(e) => setCiudad(e.target.value)}
+                                    value={city}
+                                    onChange={(e) => setCity(e.target.value)}
                                     required
                                 >
-                                    {ciudades.map(ciudad => (
+                                    {cities.map(ciudad => (
                                         <option key={ciudad} value={ciudad}>
                                             {ciudad}
                                         </option>

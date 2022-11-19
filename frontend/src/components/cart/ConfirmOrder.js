@@ -10,17 +10,17 @@ export const ConfirmOrder = () => {
     const { user } = useSelector (state => state.auth)
 
     //calculemos los valores
-    const precioItems= cartItems.reduce((acc, item) => acc+item.precio * item.quantity, 0)
-    const precioEnvio= precioItems> 125000 ? 0: 12000
-    const precioImpuesto = Number((0.19 * precioItems).toFixed(2))
-    const precioTotal =(precioItems + precioEnvio + precioImpuesto).toFixed(2)
+    const priceItems= cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0)
+    const priceShipping= priceItems> 100000 ? 0: 12000
+    const priceTax = Number((0.19 * priceItems).toFixed(2))
+    const priceTotal =(priceItems + priceShipping + priceTax).toFixed(2)
 
     const processToPayment=()=>{
         const data={
-            precioItems: precioItems.toFixed(2),
-            precioEnvio,
-            precioImpuesto,
-            precioTotal
+            priceItems: priceItems.toFixed(2),
+            priceShipping,
+            priceTax,
+            priceTotal
         }
 
         sessionStorage.setItem('orderInfo', JSON.stringify(data))
@@ -29,7 +29,7 @@ export const ConfirmOrder = () => {
   return (
     <Fragment>
 
-            <MetaData title={'Confirmar Orden'} />
+            <MetaData title={'Confirmar pedido'} />
 
             <CheckoutSteps shipping confirmOrder />
 
@@ -37,9 +37,9 @@ export const ConfirmOrder = () => {
                 <div className="col-12 col-lg-8 mt-5 order-confirm">
 
                     <h4 className="mb-3">Información de Envio</h4>
-                    <p><b>Nombre:</b> {user && user.nombre}</p>
-                    <p><b>Teléfono:</b> {shippingInfo.telefono}</p>
-                    <p className="mb-4"><b>Dirección:</b> {`${shippingInfo.direccion}, ${shippingInfo.ciudad} ${shippingInfo.departamento}`}</p>
+                    <p><b>Nombre:</b> {user && user.name}</p>
+                    <p><b>Teléfono:</b> {shippingInfo.phone}</p>
+                    <p className="mb-4"><b>Dirección:</b> {`${shippingInfo.address}, ${shippingInfo.city} ${shippingInfo.department}`}</p>
 
                     <hr />
                     <h4 className="mt-4">Productos en tu Carrito:</h4>
@@ -50,16 +50,16 @@ export const ConfirmOrder = () => {
                             <div className="cart-item my-1" key={item.product}>
                                 <div className="row">
                                     <div className="col-4 col-lg-2">
-                                        <img src={item.imagen} alt={item.nombre} height="45" width="65" />
+                                        <img src={item.image} alt={item.name} height="45" width="65" />
                                     </div>
 
                                     <div className="col-5 col-lg-6">
-                                        <Link to={`/producto/${item.product}`}>{item.nombre}</Link>
+                                        <Link to={`/product/${item.product}`}>{item.name}</Link>
                                     </div>
 
 
                                     <div className="col-4 col-lg-4 mt-4 mt-lg-0">
-                                        <p>{item.quantity} x ${item.precio} = <b>${(item.quantity * item.precio).toFixed(2)}</b></p>
+                                        <p>{item.quantity} x ${item.price} = <b>${(item.quantity * item.price).toFixed(2)}</b></p>
                                     </div>
 
                                 </div>
@@ -73,13 +73,13 @@ export const ConfirmOrder = () => {
                     <div id="order_summary">
                         <h4>Resumen de la compra</h4>
                         <hr />
-                        <p>Subtotal:  <span className="order-summary-values">${precioItems}</span></p>
-                        <p>Costo de Envío: <span className="order-summary-values">${precioEnvio}</span></p>
-                        <p>Impuestos:  <span className="order-summary-values">${precioImpuesto}</span></p>
+                        <p>Subtotal:  <span className="order-summary-values">${priceItems}</span></p>
+                        <p>Costo de Envío: <span className="order-summary-values">${priceShipping}</span></p>
+                        <p>Impuestos:  <span className="order-summary-values">${priceTax}</span></p>
 
                         <hr />
 
-                        <p>Total: <span className="order-summary-values">${precioTotal}</span></p>
+                        <p>Total: <span className="order-summary-values">${priceTotal}</span></p>
 
                         <hr />
                         <button id="checkout_btn" className="btn btn-primary btn-block" onClick={processToPayment}>Continuar con el pago</button>

@@ -7,12 +7,12 @@ import {useNavigate} from "react-router-dom"
 
 export const Register = () => {
     const [user, setUser]= useState({
-        nombre: "",
+        name: "",
         email: "",
         password: "",
     })
     const navigate=useNavigate();
-    const {nombre, email, password} = user;
+    const {name, email, password} = user;
     const [avatar, setAvatar] = useState("");
     const [avatarPreview, setAvatarPreview]= useState("https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-default-avatar-profile-icon-vector-social-media-user-image-vector-illustration-227787227.jpg")
     const alert= useAlert();
@@ -32,7 +32,7 @@ export const Register = () => {
         e.preventDefault();
 
         const formData= new FormData();
-        formData.set("nombre", nombre);
+        formData.set("name", name);
         formData.set("email", email);
         formData.set("password", password);
         formData.set("avatar", avatar)
@@ -45,7 +45,7 @@ export const Register = () => {
             const reader = new FileReader();
 
             reader.onload=()=>{
-                if (reader.readyState ===2){
+                if (reader.readyState === 2){
                     setAvatarPreview(reader.result)
                     setAvatar(reader.result)
                 }
@@ -73,8 +73,8 @@ export const Register = () => {
                                 type="name"
                                 id="name_field"
                                 className="form-control"
-                                name='nombre'
-                                value={nombre}
+                                name='name'
+                                value={name}
                                 onChange={onChange}
                             />
                         </div>
